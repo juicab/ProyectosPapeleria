@@ -1,0 +1,211 @@
+﻿<!DOCTYPE html>
+<html lang="es-mx">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lumino - Dashboard</title>
+    <link href="admin/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/font-awesome.min.css" rel="stylesheet">
+    <link href="css/datepicker3.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+    <!--Custom Font-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#" style="color: black;"><span style="color:white">PapeMérida</span>&nbsp;Admin</a>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <em class="fa fa-cogs"></em>
+                        </a>
+                        <ul class="dropdown-menu dropdown-messages">
+                            <li>
+                                <a href="#">
+                                    <em class="fa fa-cog"></em> Configuración
+                                </a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="/Admin/CerrarSesion">
+                                    <em class="fa fa-power-off"></em> Cerrar Sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div><!-- /.container-fluid -->
+    </nav>
+    <div id="sidebar-collapse" class="col-sm-3 col-lg-2 sidebar">
+        <div class="profile-sidebar">
+            <div class="profile-userpic">
+                <img src="img/user.png" class="img-responsive" alt="">
+
+            </div>
+            <div class="profile-usertitle">
+                <div class="profile-usertitle-name">Administrador</div>
+                <div class="profile-usertitle-status"><span class="indicator label-success"></span>En linea</div>
+            </div>
+            <div class="clear"></div>
+        </div>
+        <div class="divider"></div>
+        <ul class="nav menu">
+            <li class=""><a href="Inicio.html"><em class="fa fa-dashboard">&nbsp;</em> Inicio</a></li>
+            <li><a href="Proyecto.html"><em class="fa fa-calendar">&nbsp;</em> Proyectos</a></li>
+            <li><a href="Tipo%20de%20Proyecto.html"><em class="fa fa-calendar">&nbsp;</em> Tipo de Proyecto</a></li>
+            <li><a href="Encuestas.html"><em class="fa fa-bar-chart">&nbsp;</em> Encuestas</a></li>
+            <li><a href="Resultados.html"><em class="fa fa-bar-chart">&nbsp;</em> Resultados</a></li>
+            <li class="parent ">
+                <a data-toggle="collapse" href="#sub-item-1">
+                    <em class="fa fa-navicon">&nbsp;</em> Usuarios <span data-toggle="collapse" href="#sub-item-1" class="icon pull-right"><em class="fa fa-plus"></em></span>
+                </a>
+                <ul class="children collapse" id="sub-item-1">
+                    <li>
+                        <a class="" href="Administrador.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Administrador
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Investigador.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Investigador
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Encuestador.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Encuestador
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="Permisos.html"><em class="fa fa-toggle-off">&nbsp;</em> Permisos</a></li>
+            <li class="parent ">
+                <a data-toggle="collapse" href="#sub-item-2">
+                    <em class="fa fa-navicon">&nbsp;</em> Campos de Encuesta <span data-toggle="collapse" href="#sub-item-2" class="icon pull-right"><em class="fa fa-plus"></em></span>
+                </a>
+                <ul class="children collapse" id="sub-item-2">
+                    <li>
+                        <a class="" href="Enfermedad.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Enfermedad
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Grupo.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Grupo
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Origen%20Etnico.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Origen Etnico
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Clasificacion%20Diabetica.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Clasificación Diabetica
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Rango%20de%20Diagnostico.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Rango de Diagnostico
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Enfermedad%20Concomitante.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Enfermedad Concomitante
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Complicaciones.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Complicaciones
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Medicamentos.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Medicamentos
+                        </a>
+                    </li>
+                    <li>
+                        <a class="" href="Tipo%20de%20Diabetes.html">
+                            <span class="fa fa-arrow-right">&nbsp;</span> Tipo de Diabetes
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div><!--/.sidebar-->
+    <!--/.Aqui inicia lo que va dentro del codigo campos-->
+    <div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+        <div class="row">
+            <ol class="breadcrumb">
+                <li>
+                    <a href="#">
+                        <em class="fa fa-home"></em>
+                    </a>
+                </li>
+                <li class="active">Administrador</li>
+            </ol>
+        </div><!--/.row-->
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Visitas Recientes</h1>
+            </div>
+        </div><!--/.row-->
+
+        <div class="panel panel-container">
+            <div class="row">
+                <div class="col-xs-6 col-md-6 col-lg-6 no-padding">
+                    <div class="panel panel-orange panel-widget border-right">
+                        <div class="row no-padding">
+                            <em class="fa fa-xl fa-users color-teal"></em>
+                            <div class="large">1</div>
+                            <div class="text-muted">Encuestadores</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-md-6 col-lg-6 no-padding">
+                    <div class="panel panel-red panel-widget ">
+                        <div class="row no-padding">
+                            <em class="fa fa-xl fa-search color-red"></em>
+                            <div class="large">0</div>
+                            <div class="text-muted">Investigadores</div>
+                        </div>
+                    </div>
+                </div>
+            </div><!--/.row-->
+        </div>
+
+    </div>
+    <script src="js/jquery-1.11.1.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/chart.min.js"></script>
+    <script src="js/chart-data.js"></script>
+    <script src="js/easypiechart.js"></script>
+    <script src="js/easypiechart-data.js"></script>
+    <script src="js/bootstrap-datepicker.js"></script>
+    <script src="js/custom.js"></script>
+    <script>
+		window.onload = function () {
+	var chart1 = document.getElementById("line-chart").getContext("2d");
+	window.myLine = new Chart(chart1).Line(lineChartData, {
+	responsive: true,
+	scaleLineColor: "rgba(0,0,0,.2)",
+	scaleGridLineColor: "rgba(0,0,0,.05)",
+	scaleFontColor: "#c5c7cc"
+	});
+};
+    </script>
+</body>
+</html>

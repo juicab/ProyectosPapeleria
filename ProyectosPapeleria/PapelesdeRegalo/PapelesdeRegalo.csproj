@@ -224,7 +224,9 @@
     <Content Include="js\popper.min.js" />
     <Content Include="js\range.js" />
     <Content Include="js\scrollax.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -354,8 +356,7 @@
     <Content Include="Views\Papeles\Contacto.cshtml" />
     <Content Include="Views\Papeles\Regalos.cshtml" />
     <Content Include="Views\Papeles\QuiénesSomos.cshtml" />
-    <None Include="Properties\PublishProfiles\papeles - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\papeles - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
