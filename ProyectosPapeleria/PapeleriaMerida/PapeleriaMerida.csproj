@@ -100,6 +100,7 @@
     <Content Include="admin\fonts\fontawesome-webfont.svg" />
     <Content Include="admin\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="admin\img\fondo.png" />
+    <Content Include="admin\img\pencil-case.png" />
     <Content Include="admin\img\user.png" />
     <Content Include="admin\img\usuario.png" />
     <Content Include="admin\js\bootstrap-datepicker.js" />
@@ -172,6 +173,7 @@
     <Content Include="images\footer.png" />
     <Content Include="images\home.mp4" />
     <Content Include="images\icono.png" />
+    <Content Include="images\iconomodal.png" />
     <Content Include="images\image_1.jpg" />
     <Content Include="images\image_2.jpg" />
     <Content Include="images\image_3.jpg" />
@@ -241,6 +243,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\PapeleriaController.cs" />
     <Compile Include="Global.asax.cs">
@@ -390,6 +393,15 @@
     <Content Include="Views\Papeleria\QuienesSomos.cshtml" />
     <Content Include="Views\Papeleria\Contacto.cshtml" />
     <Content Include="Views\Master\Admin.cshtml" />
+    <Content Include="Views\Admin\Inicio.cshtml" />
+    <Content Include="Views\Admin\DatosEmpresa.cshtml" />
+    <Content Include="Views\Admin\Mensajes.cshtml" />
+    <Content Include="Views\Admin\CatalogoPapeleria.cshtml" />
+    <Content Include="Views\Admin\CatalogoNovedades.cshtml" />
+    <Content Include="Views\Admin\CatalogoSticker.cshtml" />
+    <Content Include="Views\Admin\CatalogoPapeles.cshtml" />
+    <Content Include="Views\Admin\CatalogoBolsas.cshtml" />
+    <Content Include="Views\Admin\Carusel.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
