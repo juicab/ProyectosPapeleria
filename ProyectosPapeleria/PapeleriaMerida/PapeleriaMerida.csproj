@@ -101,6 +101,7 @@
     <Content Include="admin\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="admin\img\fondo.png" />
     <Content Include="admin\img\pencil-case.png" />
+    <Content Include="admin\img\picture.png" />
     <Content Include="admin\img\user.png" />
     <Content Include="admin\img\usuario.png" />
     <Content Include="admin\js\bootstrap-datepicker.js" />
@@ -166,6 +167,7 @@
     <Content Include="images\descargar.png" />
     <Content Include="images\envio.png" />
     <Content Include="images\escolares.jpg" />
+    <Content Include="images\escritura.jpg" />
     <Content Include="images\Evento\e1.jpg" />
     <Content Include="images\Evento\e2.jpg" />
     <Content Include="images\Evento\e3.jpg" />
@@ -246,9 +248,14 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\PapeleriaController.cs" />
+    <Compile Include="DAL\ConexionDAL.cs" />
+    <Compile Include="DAL\EmpresaDAL.cs" />
+    <Compile Include="DAL\MensajeDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\EmpresaModel.cs" />
+    <Compile Include="Models\MensajeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -402,6 +409,12 @@
     <Content Include="Views\Admin\CatalogoPapeles.cshtml" />
     <Content Include="Views\Admin\CatalogoBolsas.cshtml" />
     <Content Include="Views\Admin\Carusel.cshtml" />
+    <Content Include="Views\Papeleria\IniciarSesion.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Papeleria\Index.cshtml" />
+    <Content Include="Views\Admin\Marcas.cshtml" />
+    <None Include="Properties\PublishProfiles\papemerida - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\papemerida - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -411,7 +424,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Clasificacion\" />
   </ItemGroup>
