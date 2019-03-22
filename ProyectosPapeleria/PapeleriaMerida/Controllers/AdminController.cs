@@ -123,6 +123,40 @@ namespace PapeleriaMerida.Controllers
             return View();
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GuardarMarca(string nombre,string descripcion, HttpPostedFileBase imagen)
+        {
+            string rutasave;
+            SubirArchivoDAL oSubirArchivoDAL = new SubirArchivoDAL();
+            string nom = imagen.FileName;
+            if(imagen != null)
+            {
+                string ruta = Server.MapPath("~/images/Marcas/");
+                ruta += imagen.FileName;
+                oSubirArchivoDAL.SubirArchivo(ruta, imagen);
+                string error = oSubirArchivoDAL.error;
+                string confirmacion = oSubirArchivoDAL.confirmacion;
+                rutasave = "~/images/Marcas/"+ imagen.FileName ;
+                if(confirmacion=="guardado")
+                {
+                    TempData["Confirmacion"] = "Seguardo Con Exito en " + rutasave;
+                    return RedirectToAction("Marcas", "Admin");
+                }
+                else
+                {
+                    ViewBag.error = "Al parecer hubo un Error";
+                    return RedirectToAction("Marcas", "Admin");
+                }
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Marcas", "Admin");
+            }
+        }
+
+
 
         public ActionResult Carusel()
         {

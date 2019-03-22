@@ -251,6 +251,7 @@
     <Compile Include="DAL\ConexionDAL.cs" />
     <Compile Include="DAL\EmpresaDAL.cs" />
     <Compile Include="DAL\MensajeDAL.cs" />
+    <Compile Include="DAL\SubirArchivoDAL.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

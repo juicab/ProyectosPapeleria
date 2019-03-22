@@ -22,7 +22,6 @@
         </div>
     </div><!--/.row-->
 
-
     <div class="row">
         <div class="col-lg-12">
             <div class="panel panel-default">
@@ -45,12 +44,12 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label>Seleccione Archivo/PDF</label>
-                            <input type="file" accept="application/pdf">
+                            <input type="file" accept="application/pdf" onchange="PreviewImage(event)">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
-                            <img style="width: 150px; height: 150px" src="img/picture.png">
+                            <img style="width: 150px; height: 150px" id="PreviewImageID" src="img/picture.png">
                         </div>
                     </div>
                 </div>
@@ -68,3 +67,9 @@
         <p class="back-link">PAPEMÉRIDA-ADMIN <a href="#"></a></p>
     </div>
 </div>
+<script type="text/javascript">
+    function PreviewImage(event) {
+        var output = document.getElementById('PreviewImageID');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
