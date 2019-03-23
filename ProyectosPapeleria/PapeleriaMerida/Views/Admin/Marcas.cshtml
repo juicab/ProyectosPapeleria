@@ -28,14 +28,14 @@
     <div class="row">
         @if (TempData["Confirmacion"] != null)
         {
-            <div class="alert alert-success" role="alert">
-                @TempData["Confirmacion"].ToString()
-            </div>
+        <div class="alert alert-success" role="alert">
+            <strong>¡BIEN!</strong> Guardado con Éxito.
+        </div>
         }
         @if (ViewBag.error != null)
         {
             <div class="alert alert-success" role="alert">
-                @ViewBag.error
+                <strong>¡OOPS!</strong> Ocurrio un Error.
             </div>
         }
         @using (Ajax.BeginForm("GuardarMarca", "Admin", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))

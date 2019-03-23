@@ -127,21 +127,24 @@ namespace PapeleriaMerida.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult GuardarMarca(string nombre,string descripcion, HttpPostedFileBase imagen)
         {
-            string rutasave;
-            SubirArchivoDAL oSubirArchivoDAL = new SubirArchivoDAL();
-            string nom = imagen.FileName;
-            if(imagen != null)
+            MarcaDAL oMarcaDAL = new MarcaDAL();
+            if (ModelState.IsValid)
             {
-                string ruta = Server.MapPath("~/images/Marcas/");
-                ruta += imagen.FileName;
-                oSubirArchivoDAL.SubirArchivo(ruta, imagen);
-                string error = oSubirArchivoDAL.error;
-                string confirmacion = oSubirArchivoDAL.confirmacion;
-                rutasave = "~/images/Marcas/"+ imagen.FileName ;
-                if(confirmacion=="guardado")
+                int resp = 0;
+                string ruta = ImagenMarca(imagen);
+                if(ruta!="1")
                 {
-                    TempData["Confirmacion"] = "Seguardo Con Exito en " + rutasave;
-                    return RedirectToAction("Marcas", "Admin");
+                    resp = oMarcaDAL.Agregar(nombre, descripcion, ruta);
+                    if(resp==1)
+                    {
+                        TempData["Confirmacion"] = "Los Datos se han actualizado con éxito";
+                        return RedirectToAction("Marcas", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Marcas", "Admin");
+                    }
                 }
                 else
                 {
@@ -154,9 +157,35 @@ namespace PapeleriaMerida.Controllers
                 ViewBag.error = "Al parecer hubo un Error";
                 return RedirectToAction("Marcas", "Admin");
             }
+            
         }
 
-
+        public string ImagenMarca(HttpPostedFileBase imagen)
+        {
+            string rutasave;
+            string error = "1";
+            SubirArchivoDAL oSubirArchivoDAL = new SubirArchivoDAL();
+            if (imagen != null)
+            {
+                string ruta = Server.MapPath("~/images/Marcas/");
+                ruta += imagen.FileName;
+                oSubirArchivoDAL.SubirArchivo(ruta, imagen);
+                string confirmacion = oSubirArchivoDAL.confirmacion;
+                rutasave = "~/images/Marcas/" + imagen.FileName;
+                if (confirmacion == "guardado")
+                {
+                    return rutasave;
+                }
+                else
+                {
+                    return error;
+                }
+            }
+            else
+            {
+                return error;
+            }
+        }
 
         public ActionResult Carusel()
         {
