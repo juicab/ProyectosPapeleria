@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using PapeleriaMerida.Models;
+using System.Data;
 
 namespace PapeleriaMerida.DAL
 {
@@ -18,6 +19,9 @@ namespace PapeleriaMerida.DAL
             return oConexionDAL.EjecutarSQL(query);
         }
 
-
+        public DataTable Mostrar()
+        {
+            return oConexionDAL.TablaConnsulta("select * from Marca where statusmarca=1");
+        }
     }
 }

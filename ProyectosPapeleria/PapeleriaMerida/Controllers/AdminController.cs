@@ -11,9 +11,10 @@ namespace PapeleriaMerida.Controllers
     {
         EmpresaDAL oEmpresaDAL;
         MensajeDAL oMensajeDAL;
+        MarcaDAL oMarcaDAL;
         // GET: Admin
 
-        
+
         public ActionResult Inicio()
         {
             return View();
@@ -127,7 +128,7 @@ namespace PapeleriaMerida.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult GuardarMarca(string nombre,string descripcion, HttpPostedFileBase imagen)
         {
-            MarcaDAL oMarcaDAL = new MarcaDAL();
+            oMarcaDAL = new MarcaDAL();
             if (ModelState.IsValid)
             {
                 int resp = 0;
@@ -171,7 +172,7 @@ namespace PapeleriaMerida.Controllers
                 ruta += imagen.FileName;
                 oSubirArchivoDAL.SubirArchivo(ruta, imagen);
                 string confirmacion = oSubirArchivoDAL.confirmacion;
-                rutasave = "~/images/Marcas/" + imagen.FileName;
+                rutasave = imagen.FileName;
                 if (confirmacion == "guardado")
                 {
                     return rutasave;
@@ -187,10 +188,23 @@ namespace PapeleriaMerida.Controllers
             }
         }
 
+        [ChildActionOnly]
+        public ActionResult MostrarListaMarcas()
+        {
+            oMarcaDAL = new MarcaDAL();
+            return PartialView(oMarcaDAL.Mostrar());
+        }
+
         public ActionResult Carusel()
         {
             return View();
         }
+
+
+
+
+
+
 
 
     }

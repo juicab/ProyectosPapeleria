@@ -417,6 +417,7 @@
     <Content Include="Views\Admin\Marcas.cshtml" />
     <None Include="Properties\PublishProfiles\papemerida - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\papemerida - Web Deploy.pubxml" />
+    <Content Include="Views\Admin\MostrarListaMarcas.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
