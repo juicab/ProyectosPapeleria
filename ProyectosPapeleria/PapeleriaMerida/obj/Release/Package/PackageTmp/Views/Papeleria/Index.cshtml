@@ -7,6 +7,7 @@
 
 <!--Carusel de imagenes-->
 <section class="home-slider owl-carousel">
+    @{ Html.RenderAction("MostrarListaCarusel", "Papeleria");}
     <div class="slider-item" style="background-image:url(../../images/bg_1.1.jpg);">
         <div class="overlay"></div>
         <div class="container">
@@ -127,71 +128,7 @@
 <section class="ftco-section ftco-no-pt ftc-no-pb">
     <div class="container">
         <div class="row">
-            <div class="col-md-5 order-md-last wrap-about py-5 wrap-about bg-light">
-                <div class="text px-4 ftco-animate">
-                    <h4 class="mb-4">Bienvenido a la era de la Tecnología</h4>
-                    <p>Obtén nuestros catálogos y Envianos tu pedido</p>
-                    <!--Catalogo Papeleria-->
-                    <div>
-                        <h5>Descargar Catálogo de <b>Papelería</b></h5>
-                        <p>15-Marzo-2019</p>
-                        <table>
-                            <tr>
-                                <th><img src="../../images/pdf.png" width="70" height="70"></th>
-                                <th><img src="../../images/clic.png" width="200" height="50"></th>
-                            </tr>
-                        </table>
-                    </div>
-                    <br>
-                    <!--Catalogo Novedades-->
-                    <div>
-                        <h5>Descargar Catálogo de <b>Novedades</b></h5>
-                        <p>15-Marzo-2019</p>
-                        <table>
-                            <tr>
-                                <th><img src="../../images/pdf.png" width="70" height="70"></th>
-                                <th><img src="../../images/clic.png" width="200" height="50"></th>
-                            </tr>
-                        </table>
-                    </div>
-                    <br>
-                    <!--Catalogo Bolsas-->
-                    <div>
-                        <h5>Descargar Catálogo de <b>Bolsas</b></h5>
-                        <p>15-Marzo-2019</p>
-                        <table>
-                            <tr>
-                                <th><img src="../../images/pdf.png" width="70" height="70"></th>
-                                <th><img src="../../images/clic.png" width="200" height="50"></th>
-                            </tr>
-                        </table>
-                    </div>
-                    <br>
-                    <!--Catalogo Papeles-->
-                    <div>
-                        <h5>Descargar Catálogo de <b>Papeles</b></h5>
-                        <p>15-Marzo-2019</p>
-                        <table>
-                            <tr>
-                                <th><img src="../../images/pdf.png" width="70" height="70"></th>
-                                <th><img src="../../images/clic.png" width="200" height="50"></th>
-                            </tr>
-                        </table>
-                    </div>
-                    <br>
-                    <!--Catalogo Papeles-->
-                    <div>
-                        <h5>Descargar Catálogo de <b>Stickers</b></h5>
-                        <p>15-Marzo-2019</p>
-                        <table>
-                            <tr>
-                                <th><img src="../../images/pdf.png" width="70" height="70"></th>
-                                <th><img src="../../images/clic.png" width="200" height="50"></th>
-                            </tr>
-                        </table>
-                    </div>
-                </div>
-            </div>
+            @{ Html.RenderAction("MostrarListaCatalogos", "Papeleria");}
             <div class="col-md-7 wrap-about py-5 pr-md-4 ftco-animate">
                 <h2 class="mb-4">Papelería a Mayoreo</h2>
                 <p>
@@ -554,4 +491,3 @@
         </div>
     </div>
 </section>
-
