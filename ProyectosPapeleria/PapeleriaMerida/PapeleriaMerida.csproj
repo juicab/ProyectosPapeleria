@@ -100,8 +100,10 @@
     <Content Include="admin\fonts\fontawesome-webfont.svg" />
     <Content Include="admin\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="admin\img\fondo.png" />
+    <Content Include="admin\img\pdf2.png" />
     <Content Include="admin\img\pencil-case.png" />
     <Content Include="admin\img\picture.png" />
+    <Content Include="admin\img\upload-file.png" />
     <Content Include="admin\img\user.png" />
     <Content Include="admin\img\usuario.png" />
     <Content Include="admin\js\bootstrap-datepicker.js" />
@@ -124,6 +126,7 @@
     <Content Include="css\bootstrap\bootstrap-grid.css" />
     <Content Include="css\bootstrap\bootstrap-reboot.css" />
     <Content Include="css\css\bootstrap-reboot.css" />
+    <Content Include="css\error.css" />
     <Content Include="css\css\mixins\_text-hide.css" />
     <Content Include="css\flaticon.css" />
     <Content Include="css\icomoon.css" />
@@ -165,6 +168,7 @@
     <Content Include="images\course-6.jpg" />
     <Content Include="images\dept-5.jpg" />
     <Content Include="images\descargar.png" />
+    <Content Include="images\emoji.png" />
     <Content Include="images\envio.png" />
     <Content Include="images\escolares.jpg" />
     <Content Include="images\escritura.jpg" />
@@ -248,6 +252,8 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\PapeleriaController.cs" />
+    <Compile Include="DAL\CaruselDAL.cs" />
+    <Compile Include="DAL\CatalogosDAL.cs" />
     <Compile Include="DAL\ConexionDAL.cs" />
     <Compile Include="DAL\EmpresaDAL.cs" />
     <Compile Include="DAL\MarcaDAL.cs" />
@@ -256,7 +262,10 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\CaruselModel.cs" />
+    <Compile Include="Models\CatalogoModel.cs" />
     <Compile Include="Models\EmpresaModel.cs" />
+    <Compile Include="Models\MarcaModel.cs" />
     <Compile Include="Models\MensajeModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -418,6 +427,13 @@
     <None Include="Properties\PublishProfiles\papemerida - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\papemerida - Web Deploy.pubxml" />
     <Content Include="Views\Admin\MostrarListaMarcas.cshtml" />
+    <Content Include="Views\Admin\ModificarMarca.cshtml" />
+    <Content Include="Views\Papeleria\MostrarListaMarcasPagina.cshtml" />
+    <Content Include="Views\Papeleria\MostrarListaCatalogos.cshtml" />
+    <Content Include="Views\Admin\MostrarListaCarusel.cshtml" />
+    <Content Include="Views\Admin\ModificarCarusel.cshtml" />
+    <Content Include="Views\Papeleria\MostrarListaCarusel.cshtml" />
+    <Content Include="Views\Papeleria\Error.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -426,7 +442,10 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="admin\docs\" />
     <Folder Include="App_Data\" />
+    <Folder Include="images\Carusel\" />
+    <Folder Include="Views\Catalogos\" />
     <Folder Include="Views\Categoria\" />
     <Folder Include="Views\Clasificacion\" />
   </ItemGroup>

@@ -25,10 +25,10 @@
                                     <td>@item["descMarca"]</td>
                                     <td><img style="width: 150px; height: 100px" src="~/images/Marcas/@item["urlMarca"]" /></td>
                                     <td>
-                                        <a type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs" href="#">
+                                        <a type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs" href="@Url.Action("ModificarMarca", "Admin", new { id =item["idMarca"]  })">
                                             <i class="fa fa-edit"></i>
                                         </a>
-                                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs" href="#">
+                                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs" href="@Url.Action("EliminarMarca", "Admin", new { id =item["idMarca"]  })">
                                             <i class="fa fa-times"></i>
                                         </a>
                                     </td>
@@ -41,3 +41,4 @@
         </div><!-- /.panel-->
     </div><!-- /.panel-->
 </div><!-- /.col-->
+

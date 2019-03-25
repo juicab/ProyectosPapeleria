@@ -1,0 +1,24 @@
+﻿@using System.Data;
+@model DataTable
+<div class="col-md-5 order-md-last wrap-about py-5 wrap-about bg-light">
+    <div class="text px-4 ftco-animate">
+        <h4 class="mb-4">Bienvenido a la era de la Tecnología</h4>
+        <p>Obtén nuestros catálogos y Envianos tu pedido</p>
+        @foreach (DataRow item in Model.Rows)
+        {
+            <!--Catalogo Papeleria-->
+            <div>
+                <h5>Descargar Catálogo de <b>@item["nombreCat"]</b></h5>
+                <p>@item["fechaCat"]</p>
+                <table>
+                    <tr>
+                        <th><img src="../../images/pdf.png" width="70" height="70"></th>
+                        <th><a href="~/admin/docs/@item["docuCat"]" download="Catálogo @item["nombreCat"] @item["fechaCat"]"><img src="../../images/clic.png" width="200" height="50"></a></th>
+                    </tr>
+                </table>
+            </div>
+            <br>
+        }
+        </div>
+</div>
+

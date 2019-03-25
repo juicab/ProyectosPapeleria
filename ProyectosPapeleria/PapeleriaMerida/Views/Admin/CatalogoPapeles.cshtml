@@ -1,4 +1,4 @@
-﻿
+﻿@model PapeleriaMerida.Models.CatalogoModel
 @{
     ViewBag.Title = "CatalogoPapeles";
     Layout = "~/Views/Master/Admin.cshtml";
@@ -15,53 +15,75 @@
             <li class="active">Administrador</li>
         </ol>
     </div><!--/.row-->
-
     <div class="row">
         <div class="col-lg-12">
-            <h2 class="page-header">Catálogo de Papeles de Regalo</h2>
+            <h2 class="page-header">Catálogo de Papeles</h2>
         </div>
     </div><!--/.row-->
 
     <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">Datos</div>
-                <div class="panel-body">
-                    <div class="col-md-2">
-                        <div class="form-group">
-                            <label>Código</label>
-                            <input class="form-control" name="cod" type="text" disabled>
+        @if (TempData["cambio"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Los Cambios se han guardado con Éxito.
+            </div>
+        }
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡OOPS!</strong> Ocurrio un Error.
+            </div>
+        }
+        @using (Ajax.BeginForm("ActualizarCatPapeles", "Admin", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos</div>
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input class="form-control" name="cod" type="text" value="@Model.idCatalogo" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <label>Título</label>
+                                <input class="form-control" name="nombre" value="@Model.nombreCat" type="text" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Fecha de Actualización</label>
+                                <input class="form-control" name="cod" type="text" value="@Model.fechaCat" disabled>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <div class="form-group">
-                            <label>Título</label>
-                            <input class="form-control" name="nombre" type="text" disabled>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Seleccione Archivo/PDF</label>
+                                <input type="file" name="file" onchange="PreviewImage(event)" accept="application/pdf" required>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <img style="width: 150px; height: 150px" id="PreviewImageID" src="~/admin/img/upload-file.png">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="panel-body">
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <label>Seleccione Archivo/PDF</label>
-                            <input type="file" accept="application/pdf" onchange="PreviewImage(event)">
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-md btn-info" value="Guardar" />
+                            <a class="btn btn-md btn-danger" href="javascript:window.history.back();">Cancelar</a>
+                            <br />
+                            <br />
                         </div>
                     </div>
-                    <div class="col-md-4">
-                        <div class="form-group">
-                            <img style="width: 150px; height: 150px" id="PreviewImageID" src="img/picture.png">
-                        </div>
-                    </div>
-                </div>
-                <div class="panel-body">
-                    <div class="col-md-12">
-                        <input type="submit" class="btn btn-md btn-info" value="Guardar" />
-                        <br />
-                        <br />
-                    </div>
-                </div>
+                </div><!-- /.panel-->
             </div><!-- /.panel-->
-        </div><!-- /.panel-->
+        }
     </div><!-- /.col-->
     <div class="col-sm-12">
         <p class="back-link">PAPEMÉRIDA-ADMIN <a href="#"></a></p>

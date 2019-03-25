@@ -32,6 +32,18 @@
                 <strong>¡BIEN!</strong> Guardado con Éxito.
             </div>
         }
+        @if (TempData["cambio"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Los Cambios se han guardado con Éxito.
+            </div>
+        }
+        @if (TempData["eli"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Los Datos se han Eliminados con Éxito.
+            </div>
+        }
         @if (ViewBag.error != null)
         {
             <div class="alert alert-success" role="alert">
@@ -48,13 +60,13 @@
                         <div class="col-md-2">
                             <div class="form-group">
                                 <label>Código</label>
-                                <input class="form-control" name="cod" type="text">
+                                <input class="form-control" disabled name="cod" type="text">
                             </div>
                         </div>
                         <div class="col-md-10">
                             <div class="form-group">
                                 <label>Nombre</label>
-                                <input class="form-control" name="nombre" type="text">
+                                <input class="form-control" name="nombre" required type="text">
                             </div>
                         </div>
                     </div>
@@ -62,7 +74,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Descripción/Slogan</label>
-                                <textarea class="form-control" name="descripcion" rows="3"></textarea>
+                                <textarea class="form-control" name="descripcion" required rows="3"></textarea>
                             </div>
                         </div>
                     </div>
@@ -70,7 +82,7 @@
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Seleccione Imagen</label>
-                                <input type="file" accept="image/*" name="imagen" onchange="PreviewImage(event)">
+                                <input type="file" accept="image/*" required name="imagen" onchange="PreviewImage(event)">
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -82,6 +94,7 @@
                     <div class="panel-body">
                         <div class="col-md-12">
                             <input type="submit" class="btn btn-md btn-info" value="Guardar" />
+                            <a class="btn btn-md btn-danger" href="javascript:window.history.back();">Cancelar</a>
                             <br />
                             <br />
                         </div>
@@ -95,6 +108,7 @@
         <p class="back-link">PAPEMÉRIDA-ADMIN <a href="#"></a></p>
     </div>
 </div>
+
 <script type="text/javascript">
     function PreviewImage(event) {
         var output = document.getElementById('PreviewImageID');

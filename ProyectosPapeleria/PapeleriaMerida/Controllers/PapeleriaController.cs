@@ -11,7 +11,15 @@ namespace PapeleriaMerida.Controllers
     {
 
         EmpresaDAL oEmpresaDAL;
+        MarcaDAL oMarcaDAL;
+        CatalogosDAL oCatalogoDAL;
+        CaruselDAL oCaruselDAL;
         // GET: Papeleria
+
+        public ActionResult Error()
+        {
+            return View();
+        }
         public ActionResult Inicio()
         {
             return View();
@@ -24,6 +32,31 @@ namespace PapeleriaMerida.Controllers
         {
             return View();
         }
+        [ChildActionOnly]
+        public ActionResult MostrarListaMarcasPagina()
+        {
+            oMarcaDAL = new MarcaDAL();
+            return PartialView(oMarcaDAL.Mostrar());
+        }
+
+        [ChildActionOnly]
+        public ActionResult MostrarListaCatalogos()
+        {
+            oCatalogoDAL = new CatalogosDAL();
+            return PartialView(oCatalogoDAL.Mostrar());
+        }
+
+        [ChildActionOnly]
+        public ActionResult MostrarListaCarusel()
+        {
+            oCaruselDAL = new CaruselDAL();
+            return PartialView(oCaruselDAL.Mostrar());
+        }
+
+
+
+
+
         public ActionResult QuienesSomos()
         {
             oEmpresaDAL = new EmpresaDAL();
