@@ -146,29 +146,26 @@
     <Content Include="fonts\open-iconic\open-iconic.svg" />
     <Content Include="Global.asax" />
     <Content Include="images\award.png" />
-    <Content Include="images\bacoutil.png" />
     <Content Include="images\bannerestrella.jpg" />
-    <Content Include="images\bg_1.1.jpg" />
-    <Content Include="images\bg_2.jpg" />
     <Content Include="images\bg_3.2.jpg" />
     <Content Include="images\bg_3.jpg" />
     <Content Include="images\bg_4.jpg" />
     <Content Include="images\bg_5.jpg" />
     <Content Include="images\carrito.jpg" />
+    <Content Include="images\Carusel\bacoutil.png" />
+    <Content Include="images\Carusel\bg_1.1.jpg" />
+    <Content Include="images\Carusel\bg_2.jpg" />
     <Content Include="images\Carusel\escolar.jpg" />
+    <Content Include="images\Carusel\escolares.jpg" />
     <Content Include="images\Carusel\fondo.jpg" />
+    <Content Include="images\Carusel\ninas.jpg" />
+    <Content Include="images\Carusel\tod.jpg" />
     <Content Include="images\clic.png" />
     <Content Include="images\Clientes\cli1.jpg" />
     <Content Include="images\Clientes\cli2.jpg" />
     <Content Include="images\Clientes\cli3.jpg" />
     <Content Include="images\Clientes\cli4.jpg" />
-    <Content Include="images\course-1.jpg" />
-    <Content Include="images\course-2.jpg" />
-    <Content Include="images\course-3.jpg" />
-    <Content Include="images\course-4.jpg" />
-    <Content Include="images\course-5.jpg" />
-    <Content Include="images\course-6.jpg" />
-    <Content Include="images\dept-5.jpg" />
+    <Content Include="images\colores.jpg" />
     <Content Include="images\descargar.png" />
     <Content Include="images\emoji.png" />
     <Content Include="images\envio.png" />
@@ -182,12 +179,6 @@
     <Content Include="images\home.mp4" />
     <Content Include="images\icono.png" />
     <Content Include="images\iconomodal.png" />
-    <Content Include="images\image_1.jpg" />
-    <Content Include="images\image_2.jpg" />
-    <Content Include="images\image_3.jpg" />
-    <Content Include="images\image_4.jpg" />
-    <Content Include="images\image_5.jpg" />
-    <Content Include="images\image_6.jpg" />
     <Content Include="images\lapiz.png" />
     <Content Include="images\loc.png" />
     <Content Include="images\logo1.png" />
@@ -209,29 +200,13 @@
     <Content Include="images\Marcas\m7.png" />
     <Content Include="images\Marcas\m8.png" />
     <Content Include="images\Marcas\m9.png" />
-    <Content Include="images\ninas.jpg" />
+    <Content Include="images\material.jpg" />
     <Content Include="images\pago.png" />
     <Content Include="images\pdf.png" />
     <Content Include="images\pedido.png" />
-    <Content Include="images\person_1.jpg" />
-    <Content Include="images\person_2.jpg" />
-    <Content Include="images\person_3.jpg" />
-    <Content Include="images\person_4.jpg" />
     <Content Include="images\plumas.jpg" />
     <Content Include="images\regreso.jpg" />
-    <Content Include="images\staff-1.jpg" />
-    <Content Include="images\staff-2.jpg" />
-    <Content Include="images\staff-3.jpg" />
-    <Content Include="images\staff-4.jpg" />
     <Content Include="images\target.png" />
-    <Content Include="images\teacher-1.jpg" />
-    <Content Include="images\teacher-2.jpg" />
-    <Content Include="images\teacher-3.jpg" />
-    <Content Include="images\teacher-4.jpg" />
-    <Content Include="images\teacher-5.jpg" />
-    <Content Include="images\teacher-6.jpg" />
-    <Content Include="images\teacher-7.jpg" />
-    <Content Include="images\teacher-8.jpg" />
     <Content Include="images\teamwork.png" />
     <Content Include="images\tod.jpg" />
     <Content Include="js\aos.js" />
@@ -254,7 +229,6 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CategoriaController.cs" />
     <Compile Include="Controllers\PapeleriaController.cs" />
     <Compile Include="DAL\CaruselDAL.cs" />
     <Compile Include="DAL\CatalogosDAL.cs" />
@@ -444,6 +418,7 @@
     <Content Include="Views\Papeleria\Error.cshtml" />
     <None Include="Properties\PublishProfiles\papemerida - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\papemerida - Web Deploy.pubxml" />
+    <Content Include="Views\Papeleria\Categoría.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -454,8 +429,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Views\Catalogos\" />
-    <Folder Include="Views\Categoria\" />
-    <Folder Include="Views\Clasificacion\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

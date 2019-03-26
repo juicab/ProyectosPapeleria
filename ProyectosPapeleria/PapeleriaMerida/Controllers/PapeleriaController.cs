@@ -54,7 +54,10 @@ namespace PapeleriaMerida.Controllers
         }
 
 
-
+        public ActionResult Categoría()
+        {
+            return View();
+        }
 
 
         public ActionResult QuienesSomos()
