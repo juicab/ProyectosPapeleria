@@ -1,0 +1,6 @@
+﻿@using System.Data;
+@model DataTable
+@foreach (DataRow item in Model.Rows)
+{
+    <a class="dropdown-item" href="@Url.Action("Categoría", "Papeleria", new { id =item["idMarca"]  })">@item["nomMarca"]</a>
+}

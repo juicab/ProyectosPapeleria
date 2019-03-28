@@ -112,12 +112,7 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoria</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="@Url.Action("Inicio","Papeleria")">Papeleria</a>
-                            <a class="dropdown-item" href="@Url.Action("Inicio","Papeleria")">Escritura</a>
-                            <a class="dropdown-item" href="@Url.Action("Inicio","Papeleria")">Oficina</a>
-                            <a class="dropdown-item" href="@Url.Action("Inicio","Papeleria")">Calculadoras</a>
-                            <a class="dropdown-item" href="@Url.Action("Inicio","Papeleria")">Pinturas</a>
-                            <a class="dropdown-item" href="@Url.Action("Inicio","Papeleria")">Novedades</a>
+                            @{ Html.RenderAction("ListaCategoria", "Papeleria");}
                         </div>
                     </li>
                     <li class="nav-item"><a href="@Url.Action("QuienesSomos","Papeleria")" class="nav-link">Quiénes Somos</a></li>

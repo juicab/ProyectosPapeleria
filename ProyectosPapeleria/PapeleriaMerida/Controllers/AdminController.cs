@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using PapeleriaMerida.DAL;
+using PapeleriaMerida.Models;
 using System.Data;
 
 namespace PapeleriaMerida.Controllers
@@ -15,6 +16,8 @@ namespace PapeleriaMerida.Controllers
         MarcaDAL oMarcaDAL;
         CatalogosDAL oCatalogosDAL;
         CaruselDAL oCaruselDAL;
+        MarcasDAL oMarcasDAL;
+        ProductoDAL oProductoDAL;
         // GET: Admin
 
 
@@ -33,7 +36,7 @@ namespace PapeleriaMerida.Controllers
         public ActionResult CatalogoPapeleria()
         {
             oCatalogosDAL = new CatalogosDAL();
-            return View( oCatalogosDAL.ObtenerCatPapeleria());
+            return View(oCatalogosDAL.ObtenerCatPapeleria());
         }
         public ActionResult CatalogoNovedades()
         {
@@ -73,7 +76,7 @@ namespace PapeleriaMerida.Controllers
             {
                 int Resp = 0;
                 Resp = oMensajeDAL.Agregar(nombre, correo, asunto, telefono, mensaje);
-                if(Resp==1)
+                if (Resp == 1)
                 {
                     TempData["Mensaje"] = "Los Datos se han actualizado con éxito";
                     return RedirectToAction("Contacto", "Papeleria");
@@ -99,7 +102,7 @@ namespace PapeleriaMerida.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult ModificarDatos(string telefono, string direccion,string correo,string sitio,string descripcion, string mision, string vision, string valores)
+        public ActionResult ModificarDatos(string telefono, string direccion, string correo, string sitio, string descripcion, string mision, string vision, string valores)
         {
             oEmpresaDAL = new EmpresaDAL();
             if (ModelState.IsValid)
@@ -143,17 +146,17 @@ namespace PapeleriaMerida.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult GuardarMarca(string nombre,string descripcion, HttpPostedFileBase imagen)
+        public ActionResult GuardarMarca(string nombre, string descripcion, HttpPostedFileBase imagen)
         {
             oMarcaDAL = new MarcaDAL();
             if (ModelState.IsValid)
             {
                 int resp = 0;
                 string ruta = ImagenMarca(imagen);
-                if(ruta!="1")
+                if (ruta != "1")
                 {
                     resp = oMarcaDAL.Agregar(nombre, descripcion, ruta);
-                    if(resp==1)
+                    if (resp == 1)
                     {
                         TempData["Confirmacion"] = "Los Datos se han actualizado con éxito";
                         return RedirectToAction("Marcas", "Admin");
@@ -175,7 +178,7 @@ namespace PapeleriaMerida.Controllers
                 ViewBag.error = "Al parecer hubo un Error";
                 return RedirectToAction("Marcas", "Admin");
             }
-            
+
         }
 
         public string ImagenMarca(HttpPostedFileBase imagen)
@@ -223,15 +226,15 @@ namespace PapeleriaMerida.Controllers
         public ActionResult GuardarCambiosMarca(string nombre, string descripcion, HttpPostedFileBase imagen, int cod)
         {
             oMarcaDAL = new MarcaDAL();
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                if(imagen != null)
+                if (imagen != null)
                 {
                     int resp = 0;
                     string ruta = ImagenMarca(imagen);
                     if (ruta != "1")
                     {
-                        resp = oMarcaDAL.ModificarConURL(nombre, descripcion, ruta,cod);
+                        resp = oMarcaDAL.ModificarConURL(nombre, descripcion, ruta, cod);
                         if (resp == 1)
                         {
                             TempData["cambio"] = "Los Datos se han actualizado con éxito";
@@ -273,22 +276,22 @@ namespace PapeleriaMerida.Controllers
             }
 
         }
- 
+
         public ActionResult EliminarMarca(int id)
         {
             oMarcaDAL = new MarcaDAL();
-                int resp = 0;
-                resp = oMarcaDAL.Eliminar(id);
-                if (resp == 1)
-                {
-                    TempData["eli"] = "Los Datos se han eliminado con éxito";
-                    return RedirectToAction("Marcas", "Admin");
-                }
-                else
-                {
-                    ViewBag.error = "Al parecer hubo un Error";
-                    return RedirectToAction("Marcas", "Admin");
-                }
+            int resp = 0;
+            resp = oMarcaDAL.Eliminar(id);
+            if (resp == 1)
+            {
+                TempData["eli"] = "Los Datos se han eliminado con éxito";
+                return RedirectToAction("Marcas", "Admin");
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Marcas", "Admin");
+            }
 
         }
 
@@ -625,7 +628,6 @@ namespace PapeleriaMerida.Controllers
             }
         }
 
-
         [ChildActionOnly]
         public ActionResult MostrarListaCarusel()
         {
@@ -715,25 +717,383 @@ namespace PapeleriaMerida.Controllers
 
 
 
+        public ActionResult Marca()
+        {
+            return View();
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GuardarMarcas(string nombre, string descripcion,string slogan, HttpPostedFileBase logo,HttpPostedFileBase banner)
+        {
+            oMarcasDAL = new MarcasDAL();
+            if (ModelState.IsValid)
+            {
+                int resp = 0;
+                string log = ImagenMarcaLogo(logo);
+                string ban = ImagenMarcaBanner(banner);
+                if (log != "1" && ban!="1")
+                {
+                    resp = oMarcasDAL.Agregar(nombre, descripcion, slogan, log, ban);
+                    if (resp == 1)
+                    {
+                        TempData["Confirmacion"] = "Los Datos se han actualizado con éxito";
+                        return RedirectToAction("Marca", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Marca", "Admin");
+                    }
+                }
+                else
+                {
+                    ViewBag.error = "Al parecer hubo un Error";
+                    return RedirectToAction("Marca", "Admin");
+                }
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Marca", "Admin");
+            }
+
+        }
+        public string ImagenMarcaLogo(HttpPostedFileBase imagen)
+        {
+            string rutasave;
+            string error = "1";
+            SubirArchivoDAL oSubirArchivoDAL = new SubirArchivoDAL();
+            if (imagen != null)
+            {
+                string ruta = Server.MapPath("~/images/Marcas/");
+                ruta += imagen.FileName;
+                oSubirArchivoDAL.SubirArchivo(ruta, imagen);
+                string confirmacion = oSubirArchivoDAL.confirmacion;
+                rutasave = imagen.FileName;
+                if (confirmacion == "guardado")
+                {
+                    return rutasave;
+                }
+                else
+                {
+                    return error;
+                }
+            }
+            else
+            {
+                return error;
+            }
+        }
+        public string ImagenMarcaBanner(HttpPostedFileBase imagen)
+        {
+            string rutasave;
+            string error = "1";
+            SubirArchivoDAL oSubirArchivoDAL = new SubirArchivoDAL();
+            if (imagen != null)
+            {
+                string ruta = Server.MapPath("~/images/Banner/");
+                ruta += imagen.FileName;
+                oSubirArchivoDAL.SubirArchivo(ruta, imagen);
+                string confirmacion = oSubirArchivoDAL.confirmacion;
+                rutasave = imagen.FileName;
+                if (confirmacion == "guardado")
+                {
+                    return rutasave;
+                }
+                else
+                {
+                    return error;
+                }
+            }
+            else
+            {
+                return error;
+            }
+        }
+        [ChildActionOnly]
+        public ActionResult MostrarListaMarca()
+        {
+            oMarcasDAL = new MarcasDAL();
+            return PartialView(oMarcasDAL.Mostrar());
+        }
+        public ActionResult ModificarMarcas(int id)
+        {
+            oMarcasDAL = new MarcasDAL();
+            return View(oMarcasDAL.ObtenerMarcaSeleccionada(id));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GuardarCambiosMarcas(string nombre, string descripcion, string slogan, HttpPostedFileBase logo, HttpPostedFileBase banner,int cod)
+        {
+            oMarcasDAL = new MarcasDAL();
+            if(ModelState.IsValid)
+            {
+                if(logo != null && banner!=null)
+                {
+                    int resp = 0;
+                    string log = ImagenMarcaLogo(logo);
+                    string ban = ImagenMarcaBanner(banner);
+                    if(log != "1" && ban != "1")
+                    {
+                        resp = oMarcasDAL.ModificarCompleto(nombre, descripcion, slogan, log, ban, cod);
+                        if (resp == 1)
+                        {
+                            TempData["cambio"] = "Los Datos se han actualizado con éxito";
+                            return RedirectToAction("Marca", "Admin");
+                        }
+                        else
+                        {
+                            ViewBag.error = "Al parecer hubo un Error";
+                            return RedirectToAction("Marca", "Admin");
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Marca", "Admin");
+                    }
+                }
+                else
+                {
+                    if(logo != null && banner == null)
+                    {
+                        int resp2 = 0;
+                        string logoo = ImagenMarcaLogo(logo);
+                        if(logoo != "1")
+                        {
+                            resp2 = oMarcasDAL.ModificarDatosConLogo(nombre, descripcion, slogan, logoo, cod);
+                            if (resp2 == 1)
+                            {
+                                TempData["cambio"] = "Los Datos se han actualizado con éxito";
+                                return RedirectToAction("Marca", "Admin");
+                            }
+                            else
+                            {
+                                ViewBag.error = "Al parecer hubo un Error";
+                                return RedirectToAction("Marca", "Admin");
+                            }
+                        }
+                        else
+                        {
+                            ViewBag.error = "Al parecer hubo un Error";
+                            return RedirectToAction("Marca", "Admin");
+                        }
+                    }
+                    else
+                    {
+                        if(logo==null && banner != null)
+                        {
+                            int resp3 = 0;
+                            string logooo = ImagenMarcaBanner(banner);
+                            if(logooo!="1")
+                            {
+                                resp3 = oMarcasDAL.ModificarDatosConBanner(nombre, descripcion, slogan, logooo, cod);
+                                if (resp3 == 1)
+                                {
+                                    TempData["cambio"] = "Los Datos se han actualizado con éxito";
+                                    return RedirectToAction("Marca", "Admin");
+                                }
+                                else
+                                {
+                                    ViewBag.error = "Al parecer hubo un Error";
+                                    return RedirectToAction("Marca", "Admin");
+                                }
+                            }
+                            else
+                            {
+                                ViewBag.error = "Al parecer hubo un Error";
+                                return RedirectToAction("Marca", "Admin");
+                            }
+                        }
+                        else
+                        {
+                            if(logo==null && banner==null)
+                            {
+                                int resp4 = 0;
+                                resp4 = oMarcasDAL.ModificarSoloDatos(nombre, descripcion, slogan, cod);
+                                if (resp4 == 1)
+                                {
+                                    TempData["cambio"] = "Los Datos se han actualizado con éxito";
+                                    return RedirectToAction("Marca", "Admin");
+                                }
+                                else
+                                {
+                                    ViewBag.error = "Al parecer hubo un Error";
+                                    return RedirectToAction("Marca", "Admin");
+                                }
+                            }
+                            else
+                            {
+                                ViewBag.error = "Al parecer hubo un Error";
+                                return RedirectToAction("Marca", "Admin");
+                            }
+                        }
+                    }
+                }
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Marcas", "Admin");
+            }
+        }
+        public ActionResult EliminarMarcas(int id)
+        {
+            oMarcasDAL = new MarcasDAL();
+            int resp = 0;
+            resp = oMarcasDAL.Eliminar(id);
+            if (resp == 1)
+            {
+                TempData["eli"] = "Los Datos se han eliminado con éxito";
+                return RedirectToAction("Marca", "Admin");
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Marca", "Admin");
+            }
+
+        }
 
 
 
 
+        public ActionResult Productos()
+        {
+            var oProductoModel = new Models.ProductoModel();
+            oProductoDAL = new ProductoDAL();
+            ViewBag.idMarca = new SelectList(oProductoModel.ListaMarcas = oProductoDAL.ListaMarcas(), "idMarca", "nomMarca");
+            return View();
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GuardarProducto(string nombre,string descripcion,HttpPostedFileBase imagen, int idMarca)
+        {
+            oProductoDAL = new ProductoDAL();
+            if (ModelState.IsValid)
+            {
+                int resp = 0;
+                string ruta = ImagenProducto(imagen);
+                if (ruta != "1")
+                {
+                    resp = oProductoDAL.Agregar(nombre, descripcion, idMarca, ruta);
+                    if (resp == 1)
+                    {
+                        TempData["Confirmacion"] = "Los Datos se han actualizado con éxito";
+                        return RedirectToAction("Productos", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Productos", "Admin");
+                    }
+                }
+                else
+                {
+                    ViewBag.error = "Al parecer hubo un Error";
+                    return RedirectToAction("Productos", "Admin");
+                }
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Productos", "Admin");
+            }
 
+        }
 
+        public string ImagenProducto(HttpPostedFileBase imagen)
+        {
+            string rutasave;
+            string error = "1";
+            SubirArchivoDAL oSubirArchivoDAL = new SubirArchivoDAL();
+            if (imagen != null)
+            {
+                string ruta = Server.MapPath("~/images/Productos/");
+                ruta += imagen.FileName;
+                oSubirArchivoDAL.SubirArchivo(ruta, imagen);
+                string confirmacion = oSubirArchivoDAL.confirmacion;
+                rutasave = imagen.FileName;
+                if (confirmacion == "guardado")
+                {
+                    return rutasave;
+                }
+                else
+                {
+                    return error;
+                }
+            }
+            else
+            {
+                return error;
+            }
+        }
 
-
-
-
-
-
-
-
-
-
-
-
+        [ChildActionOnly]
+        public ActionResult MostrarListaProductos()
+        {
+            oProductoDAL = new ProductoDAL();
+            return PartialView(oProductoDAL.Mostrar());
+        }
+        public ActionResult ModificarProducto(int id)
+        {
+            oProductoDAL = new ProductoDAL();
+            var oProductoModel = new Models.ProductoModel();
+            ViewBag.idMarca = new SelectList(oProductoModel.ListaMarcas = oProductoDAL.ListaMarcas(), "idMarca", "nomMarca");
+            return View(oProductoDAL.ObtenerProductoSeleccionado(id));
+        }
+        public ActionResult GuardarCambiosProducto(string nombre, string descripcion, HttpPostedFileBase imagen, int idMarca,int cod)
+        {
+            oProductoDAL = new ProductoDAL();
+            if (ModelState.IsValid)
+            {
+                if(imagen!=null)
+                {
+                    int resp = 0;
+                    string ruta = ImagenProducto(imagen);
+                    if(ruta!="1")
+                    {
+                        resp = oProductoDAL.ModificarConImagen(nombre, descripcion, idMarca, ruta, cod);
+                        if(resp==1)
+                        {
+                            TempData["cambio"] = "Los Datos se han actualizado con éxito";
+                            return RedirectToAction("Productos", "Admin");
+                        }
+                        else
+                        {
+                            ViewBag.error = "Al parecer hubo un Error";
+                            return RedirectToAction("Productos", "Admin");
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Productos", "Admin");
+                    }
+                }
+                else
+                {
+                    int resp2 = 0;
+                    resp2 = oProductoDAL.ModificarSinImagen(nombre, descripcion, idMarca, cod);
+                    if(resp2==1)
+                    {
+                        TempData["cambio"] = "Los Datos se han actualizado con éxito";
+                        return RedirectToAction("Productos", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Productos", "Admin");
+                    }
+                }
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Productos", "Admin");
+            }
+        }
 
 
 
