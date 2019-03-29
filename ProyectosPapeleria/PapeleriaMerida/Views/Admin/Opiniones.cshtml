@@ -1,0 +1,123 @@
+﻿
+@{
+    ViewBag.Title = "Opiniones";
+    Layout = "~/Views/Master/Admin.cshtml";
+}
+
+
+<!--/.Aqui inicia lo que va dentro del codigo campos-->
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Administrador</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Opiniones</h2>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        @if (TempData["Confirmacion"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Guardado con Éxito.
+            </div>
+        }
+        @if (TempData["cambio"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Los Cambios se han guardado con Éxito.
+            </div>
+        }
+        @if (TempData["eli"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Los Datos se han Eliminados con Éxito.
+            </div>
+        }
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡OOPS!</strong> Ocurrio un Error.
+            </div>
+        }
+        @using (Ajax.BeginForm("GuardarOpinion", "Admin", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos</div>
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input class="form-control" disabled name="cod" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input class="form-control" name="nombre" value="Cliente" disabled required type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Opinión del Cliente</label>
+                                <textarea class="form-control" name="opinion" required rows="3"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Seleccione Imagen del Cliente</label>
+                                <input type="file" accept="image/*" required name="imagen" onchange="PreviewImagen(event)">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <img style="width: 150px; height: 250px" id="PreviewImageLogo" src="img/picture.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-md btn-info" value="Guardar" />
+                            <a class="btn btn-md btn-danger" href="javascript:window.history.back();">Cancelar</a>
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div><!-- /.panel-->
+            </div><!-- /.panel-->
+        }
+    </div><!-- /.col-->
+    <div class="col-sm-12">
+        <p class="back-link">PAPEMÉRIDA-ADMIN <a href="#"></a></p>
+    </div>
+</div>
+@{ Html.RenderAction("MostrarListaOpiniones", "Admin");}
+<script type="text/javascript">
+    function PreviewImage(event) {
+        var output = document.getElementById('PreviewImageID');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+<script type="text/javascript">
+    function PreviewImagen(event) {
+        var output = document.getElementById('PreviewImageLogo');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+

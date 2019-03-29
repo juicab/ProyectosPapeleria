@@ -30,7 +30,7 @@
                                     <a type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs" href="@Url.Action("ModificarProducto", "Admin", new { id =item["idProd"]  })">
                                         <i class="fa fa-edit"></i>
                                     </a>
-                                    <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs" href="#">
+                                    <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs" href="@Url.Action("EliminarProducto", "Admin", new { id =item["idProd"]  })">
                                         <i class="fa fa-times"></i>
                                     </a>
                                 </td>

@@ -248,6 +248,7 @@
     <Compile Include="DAL\MarcaDAL.cs" />
     <Compile Include="DAL\MarcasDAL.cs" />
     <Compile Include="DAL\MensajeDAL.cs" />
+    <Compile Include="DAL\OpinionesDAL.cs" />
     <Compile Include="DAL\ProductoDAL.cs" />
     <Compile Include="DAL\SubirArchivoDAL.cs" />
     <Compile Include="Global.asax.cs">
@@ -259,6 +260,7 @@
     <Compile Include="Models\MarcaModel.cs" />
     <Compile Include="Models\MarcasModel.cs" />
     <Compile Include="Models\MensajeModel.cs" />
+    <Compile Include="Models\OpinionesModel.cs" />
     <Compile Include="Models\ProductoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -442,6 +444,8 @@
     <Content Include="Views\Admin\ModificarProducto.cshtml" />
     <Content Include="Views\Papeleria\ListaCategoria.cshtml" />
     <Content Include="Views\Papeleria\ListaProductos.cshtml" />
+    <Content Include="Views\Admin\Opiniones.cshtml" />
+    <Content Include="Views\Admin\MostrarListaOpiniones.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

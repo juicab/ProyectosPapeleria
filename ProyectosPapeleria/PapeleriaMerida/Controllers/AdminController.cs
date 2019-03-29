@@ -18,6 +18,7 @@ namespace PapeleriaMerida.Controllers
         CaruselDAL oCaruselDAL;
         MarcasDAL oMarcasDAL;
         ProductoDAL oProductoDAL;
+        OpinionesDAL oOpinionesDAL;
         // GET: Admin
 
 
@@ -1094,16 +1095,102 @@ namespace PapeleriaMerida.Controllers
                 return RedirectToAction("Productos", "Admin");
             }
         }
+        public ActionResult EliminarProducto(int id)
+        {
+            oProductoDAL = new ProductoDAL();
+            int resp = 0;
+            resp = oProductoDAL.Eliminar(id);
+            if (resp == 1)
+            {
+                TempData["eli"] = "Los Datos se han eliminado con éxito";
+                return RedirectToAction("Productos", "Admin");
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Productos", "Admin");
+            }
+
+        }
 
 
 
 
 
 
+        public ActionResult Opiniones()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GuardarOpinion(string opinion,HttpPostedFileBase imagen)
+        {
+            oOpinionesDAL = new OpinionesDAL();
+            if (ModelState.IsValid)
+            {
+                int resp = 0;
+                string ruta = ImagenOpinion(imagen);
+                if (ruta != "1")
+                {
+                    resp = oOpinionesDAL.Agregar(opinion, ruta);
+                    if (resp == 1)
+                    {
+                        TempData["Confirmacion"] = "Los Datos se han actualizado con éxito";
+                        return RedirectToAction("Opiniones", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Opiniones", "Admin");
+                    }
+                }
+                else
+                {
+                    ViewBag.error = "Al parecer hubo un Error";
+                    return RedirectToAction("Opiniones", "Admin");
+                }
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Opiniones", "Admin");
+            }
+        }
+        public string ImagenOpinion(HttpPostedFileBase imagen)
+        {
+            string rutasave;
+            string error = "1";
+            SubirArchivoDAL oSubirArchivoDAL = new SubirArchivoDAL();
+            if (imagen != null)
+            {
+                string ruta = Server.MapPath("~/images/Clientes/");
+                ruta += imagen.FileName;
+                oSubirArchivoDAL.SubirArchivo(ruta, imagen);
+                string confirmacion = oSubirArchivoDAL.confirmacion;
+                rutasave = imagen.FileName;
+                if (confirmacion == "guardado")
+                {
+                    return rutasave;
+                }
+                else
+                {
+                    return error;
+                }
+            }
+            else
+            {
+                return error;
+            }
+        }
 
-
-
+        [ChildActionOnly]
+        public ActionResult MostrarListaOpiniones()
+        {
+            oOpinionesDAL = new OpinionesDAL();
+            return PartialView(oOpinionesDAL.Mostrar());
+        }
 
 
 

@@ -74,5 +74,11 @@ namespace PapeleriaMerida.DAL
             return oConexionDAL.EjecutarSQL(query);
         }
 
+        public int Eliminar(int id)
+        {
+            string query = "UPDATE [padmin].[Producto]SET [statusProd]= 0 WHERE idProd=" + id;
+            return oConexionDAL.EjecutarSQL(query);
+        }
+
     }
 }
