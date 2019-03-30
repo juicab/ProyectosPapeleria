@@ -1,0 +1,119 @@
+﻿
+@{
+    ViewBag.Title = "Carusel";
+    Layout = "~/Views/Master/Admin.cshtml";
+}
+
+
+<!--/.Aqui inicia lo que va dentro del codigo campos-->
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Administrador</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Carusel de imágenes principal </h2>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        @if (TempData["Confirmacion"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Guardado con Éxito.
+            </div>
+        }
+        @if (TempData["cambio"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Los Cambios se han guardado con Éxito.
+            </div>
+        }
+        @if (TempData["eli"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡BIEN!</strong> Los Datos se han Eliminados con Éxito.
+            </div>
+        }
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-success" role="alert">
+                <strong>¡OOPS!</strong> Ocurrio un Error.
+            </div>
+        }
+        @using (Ajax.BeginForm("GuardarCarusel", "Admin", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos</div>
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input class="form-control" name="cod" type="text" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>Título Primera Linea</label>
+                                <input class="form-control" name="titulo1" required type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>Título Segunda Linea</label>
+                                <input class="form-control" name="titulo2" required type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Seleccione Imagen</label>
+                                <input type="file" accept="image/*" name="imagen" required onchange="PreviewImage(event)">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <img style="width: 250px; height: 200px" id="PreviewImageID" src="~/admin/img/picture.png">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-md btn-info" value="Guardar" />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                    </div>
+
+                </div><!-- /.panel-->
+            </div><!-- /.panel-->
+        }
+    </div><!-- /.col-->
+    @{ Html.RenderAction("MostrarListaCarusel", "Admin");}
+    <div class="col-sm-12">
+        <p class="back-link">PAPEMÉRIDA-ADMIN <a href="#"></a></p>
+    </div>
+</div>
+<script type="text/javascript">
+    function PreviewImage(event) {
+        var output = document.getElementById('PreviewImageID');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+
+

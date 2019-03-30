@@ -26,6 +26,24 @@ namespace PapeleriaMerida.DAL
             return oConexionDAL.TablaConnsulta("select * from Mensaje  where pagina ='Papeleria Merida' and statusMen = 1");
         }
 
+        public MensajeModel ObtenerMensajeSeleccionado(int id)
+        {
+            var Mensaje = new MensajeModel();
+            String StrBuscar = string.Format("select * from Mensaje where idMensaje=" + id);
+            DataTable Datos = oConexionDAL.TablaConnsulta(StrBuscar);
+            DataRow row = Datos.Rows[0];
+            Mensaje.idMensaje = Convert.ToInt32(row["idMensaje"]);
+            Mensaje.nombre = row["nombre"].ToString();
+            Mensaje.correo = row["correo"].ToString();
+            Mensaje.asunto = row["asunto"].ToString();
+            Mensaje.telefono = row["telefono"].ToString();
+            Mensaje.pagina = row["pagina"].ToString();
+            Mensaje.mensaje = row["mensaje"].ToString();
+            Mensaje.statusMen = Convert.ToInt32(row["statusMen"]);
+            return Mensaje;
+        }
+
+
 
     }
 }

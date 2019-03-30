@@ -68,6 +68,14 @@ namespace PapeleriaMerida.Controllers
             oMensajeDAL = new MensajeDAL();
             return View(oMensajeDAL.Mostrar());
         }
+
+        public ActionResult VerMensaje(int id)
+        {
+            oMensajeDAL = new MensajeDAL();
+            return View(oMensajeDAL.ObtenerMensajeSeleccionado(id));
+        }
+
+
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult EnviarMensaje(string nombre, string correo, string asunto, string telefono, string mensaje)
@@ -724,7 +732,7 @@ namespace PapeleriaMerida.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult GuardarMarcas(string nombre, string descripcion,string slogan, HttpPostedFileBase logo,HttpPostedFileBase banner)
+        public ActionResult GuardarMarcas(string nombre, string descripcion, string slogan, HttpPostedFileBase logo, HttpPostedFileBase banner)
         {
             oMarcasDAL = new MarcasDAL();
             if (ModelState.IsValid)
@@ -732,7 +740,7 @@ namespace PapeleriaMerida.Controllers
                 int resp = 0;
                 string log = ImagenMarcaLogo(logo);
                 string ban = ImagenMarcaBanner(banner);
-                if (log != "1" && ban!="1")
+                if (log != "1" && ban != "1")
                 {
                     resp = oMarcasDAL.Agregar(nombre, descripcion, slogan, log, ban);
                     if (resp == 1)
@@ -824,17 +832,17 @@ namespace PapeleriaMerida.Controllers
         }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult GuardarCambiosMarcas(string nombre, string descripcion, string slogan, HttpPostedFileBase logo, HttpPostedFileBase banner,int cod)
+        public ActionResult GuardarCambiosMarcas(string nombre, string descripcion, string slogan, HttpPostedFileBase logo, HttpPostedFileBase banner, int cod)
         {
             oMarcasDAL = new MarcasDAL();
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                if(logo != null && banner!=null)
+                if (logo != null && banner != null)
                 {
                     int resp = 0;
                     string log = ImagenMarcaLogo(logo);
                     string ban = ImagenMarcaBanner(banner);
-                    if(log != "1" && ban != "1")
+                    if (log != "1" && ban != "1")
                     {
                         resp = oMarcasDAL.ModificarCompleto(nombre, descripcion, slogan, log, ban, cod);
                         if (resp == 1)
@@ -856,11 +864,11 @@ namespace PapeleriaMerida.Controllers
                 }
                 else
                 {
-                    if(logo != null && banner == null)
+                    if (logo != null && banner == null)
                     {
                         int resp2 = 0;
                         string logoo = ImagenMarcaLogo(logo);
-                        if(logoo != "1")
+                        if (logoo != "1")
                         {
                             resp2 = oMarcasDAL.ModificarDatosConLogo(nombre, descripcion, slogan, logoo, cod);
                             if (resp2 == 1)
@@ -882,11 +890,11 @@ namespace PapeleriaMerida.Controllers
                     }
                     else
                     {
-                        if(logo==null && banner != null)
+                        if (logo == null && banner != null)
                         {
                             int resp3 = 0;
                             string logooo = ImagenMarcaBanner(banner);
-                            if(logooo!="1")
+                            if (logooo != "1")
                             {
                                 resp3 = oMarcasDAL.ModificarDatosConBanner(nombre, descripcion, slogan, logooo, cod);
                                 if (resp3 == 1)
@@ -908,7 +916,7 @@ namespace PapeleriaMerida.Controllers
                         }
                         else
                         {
-                            if(logo==null && banner==null)
+                            if (logo == null && banner == null)
                             {
                                 int resp4 = 0;
                                 resp4 = oMarcasDAL.ModificarSoloDatos(nombre, descripcion, slogan, cod);
@@ -969,7 +977,7 @@ namespace PapeleriaMerida.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult GuardarProducto(string nombre,string descripcion,HttpPostedFileBase imagen, int idMarca)
+        public ActionResult GuardarProducto(string nombre, string descripcion, HttpPostedFileBase imagen, int idMarca)
         {
             oProductoDAL = new ProductoDAL();
             if (ModelState.IsValid)
@@ -1044,19 +1052,21 @@ namespace PapeleriaMerida.Controllers
             ViewBag.idMarca = new SelectList(oProductoModel.ListaMarcas = oProductoDAL.ListaMarcas(), "idMarca", "nomMarca");
             return View(oProductoDAL.ObtenerProductoSeleccionado(id));
         }
-        public ActionResult GuardarCambiosProducto(string nombre, string descripcion, HttpPostedFileBase imagen, int idMarca,int cod)
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GuardarCambiosProducto(string nombre, string descripcion, HttpPostedFileBase imagen, int idMarca, int cod)
         {
             oProductoDAL = new ProductoDAL();
             if (ModelState.IsValid)
             {
-                if(imagen!=null)
+                if (imagen != null)
                 {
                     int resp = 0;
                     string ruta = ImagenProducto(imagen);
-                    if(ruta!="1")
+                    if (ruta != "1")
                     {
                         resp = oProductoDAL.ModificarConImagen(nombre, descripcion, idMarca, ruta, cod);
-                        if(resp==1)
+                        if (resp == 1)
                         {
                             TempData["cambio"] = "Los Datos se han actualizado con éxito";
                             return RedirectToAction("Productos", "Admin");
@@ -1077,7 +1087,7 @@ namespace PapeleriaMerida.Controllers
                 {
                     int resp2 = 0;
                     resp2 = oProductoDAL.ModificarSinImagen(nombre, descripcion, idMarca, cod);
-                    if(resp2==1)
+                    if (resp2 == 1)
                     {
                         TempData["cambio"] = "Los Datos se han actualizado con éxito";
                         return RedirectToAction("Productos", "Admin");
@@ -1098,18 +1108,19 @@ namespace PapeleriaMerida.Controllers
         public ActionResult EliminarProducto(int id)
         {
             oProductoDAL = new ProductoDAL();
-            int resp = 0;
-            resp = oProductoDAL.Eliminar(id);
-            if (resp == 1)
-            {
-                TempData["eli"] = "Los Datos se han eliminado con éxito";
-                return RedirectToAction("Productos", "Admin");
-            }
-            else
-            {
-                ViewBag.error = "Al parecer hubo un Error";
-                return RedirectToAction("Productos", "Admin");
-            }
+                int resp = 0;
+                resp = oProductoDAL.Eliminar(id);
+                if (resp == 1)
+                {
+                    TempData["eli"] = "Los Datos se han eliminado con éxito";
+                    return RedirectToAction("Productos", "Admin");
+                }
+                else
+                {
+                    ViewBag.error = "Al parecer hubo un Error";
+                    return RedirectToAction("Productos", "Admin");
+                }
+            
 
         }
 
@@ -1125,7 +1136,7 @@ namespace PapeleriaMerida.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult GuardarOpinion(string opinion,HttpPostedFileBase imagen)
+        public ActionResult GuardarOpinion(string opinion, HttpPostedFileBase imagen)
         {
             oOpinionesDAL = new OpinionesDAL();
             if (ModelState.IsValid)
@@ -1192,10 +1203,85 @@ namespace PapeleriaMerida.Controllers
             return PartialView(oOpinionesDAL.Mostrar());
         }
 
+        public ActionResult ModificarOpiniones(int id)
+        {
+            oOpinionesDAL = new OpinionesDAL();
+            return View(oOpinionesDAL.ObtenerOpinionSeleccionada(id));
+        }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult GuardarCambiosOpinion(string opinion, HttpPostedFileBase imagen, int cod)
+        {
+            oOpinionesDAL = new OpinionesDAL();
+            if (ModelState.IsValid)
+            {
+                if (imagen != null)
+                {
+                    int resp = 0;
+                    string ruta = ImagenOpinion(imagen);
+                    if (ruta != "1")
+                    {
+                        resp = oOpinionesDAL.CambiosConImagen(opinion, ruta, cod);
+                        if (resp == 1)
+                        {
+                            TempData["cambio"] = "Los Datos se han actualizado con éxito";
+                            return RedirectToAction("Opiniones", "Admin");
+                        }
+                        else
+                        {
+                            ViewBag.error = "Al parecer hubo un Error";
+                            return RedirectToAction("Opiniones", "Admin");
+                        }
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Opiniones", "Admin");
+                    }
+                }
+                else
+                {
+                    int resp2 = oOpinionesDAL.CambiosSinImagen(opinion, cod);
+                    if (resp2 == 1)
+                    {
+                        TempData["cambio"] = "Los Datos se han actualizado con éxito";
+                        return RedirectToAction("Opiniones", "Admin");
+                    }
+                    else
+                    {
+                        ViewBag.error = "Al parecer hubo un Error";
+                        return RedirectToAction("Opiniones", "Admin");
+                    }
+                }
+
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Opiniones", "Admin");
+            }
 
 
 
 
+
+
+        }
+        public ActionResult EliminarOpinion(int id)
+        {
+                oOpinionesDAL = new OpinionesDAL();
+                int resp = oOpinionesDAL.Eliminar(id);
+                if(resp==1)
+                {
+                    TempData["eli"] = "Los Datos se han eliminado con éxito";
+                    return RedirectToAction("Opiniones", "Admin");
+                }
+                else
+                {
+                    ViewBag.error = "Al parecer hubo un Error";
+                    return RedirectToAction("Opiniones", "Admin");
+                }
+        }
 
 
 

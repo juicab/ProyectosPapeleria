@@ -1,0 +1,135 @@
+﻿@model PapeleriaMerida.Models.EmpresaModel
+@{
+    ViewBag.Title = "DatosEmpresa";
+    Layout = "~/Views/Master/Admin.cshtml";
+}
+
+<!--/.Aqui inicia lo que va dentro del codigo campos-->
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Administrador</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Datos de la Empresa</h2>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        @if (TempData["Mensaje"] != null)
+        {
+            <div class="alert alert-success" role="alert">
+                @TempData["Mensaje"].ToString()
+            </div>
+        }
+        @if (ViewBag.error != null)
+        {
+            <div class="alert alert-success" role="alert">
+                @ViewBag.error
+            </div>
+        }
+        @using (Ajax.BeginForm("ModificarDatos", "Admin", new AjaxOptions { HttpMethod = "POST" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Estos datos son los que apareceran en la página</div>
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input class="form-control" name="idempresa" value="@Model.idEmpresa" type="text" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>Nombre de la Empresa</label>
+                                <input class="form-control" name="nombre" value="@Model.nombre" type="text" disabled>
+                            </div>
+                        </div>
+                        <div class="col-md-5">
+                            <div class="form-group">
+                                <label>Teléfono</label>
+                                <input class="form-control" name="telefono" value="@Model.telefono" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Dirección</label>
+                                <input class="form-control" name="direccion" value="@Model.direccion" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>Correo Electrónico</label>
+                                <input class="form-control" name="correo" value="@Model.correo" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Sitio Web</label>
+                                <input class="form-control" name="sitio" value="@Model.sitio" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Descripción</label>
+                                <textarea class="form-control" name="descripcion" rows="3">@Model.descripcion</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Misión</label>
+                                <textarea class="form-control" name="mision" rows="3">@Model.mision</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Visión</label>
+                                <textarea class="form-control" name="vision" rows="3">@Model.vision</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Valores</label>
+                                <textarea class="form-control" name="valores" rows="3">@Model.valores</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-md btn-info" value="Guardar Cambios" />
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div><!-- /.panel-->
+            </div><!-- /.panel-->
+        }
+    </div><!-- /.col-->
+    <div class="col-sm-12">
+        <p class="back-link">PapeMérida-Admin <a href="#"></a></p>
+    </div>
+</div>
+

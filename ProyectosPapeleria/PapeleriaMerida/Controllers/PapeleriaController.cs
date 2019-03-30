@@ -15,7 +15,19 @@ namespace PapeleriaMerida.Controllers
         CatalogosDAL oCatalogoDAL;
         CaruselDAL oCaruselDAL;
         ProductoDAL oProductos;
+        OpinionesDAL oOpinionesDAL;
         // GET: Papeleria
+
+
+        [ChildActionOnly]
+        public ActionResult ListaOpiniones()
+        {
+            oOpinionesDAL = new OpinionesDAL();
+            return PartialView(oOpinionesDAL.Mostrar());
+
+        }
+
+
         [ChildActionOnly]
         public ActionResult ListaCategoria()
         {

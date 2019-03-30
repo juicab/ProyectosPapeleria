@@ -433,8 +433,6 @@
     <Content Include="Views\Admin\ModificarCarusel.cshtml" />
     <Content Include="Views\Papeleria\MostrarListaCarusel.cshtml" />
     <Content Include="Views\Papeleria\Error.cshtml" />
-    <None Include="Properties\PublishProfiles\papemerida - FTP.pubxml" />
-    <None Include="Properties\PublishProfiles\papemerida - Web Deploy.pubxml" />
     <Content Include="Views\Papeleria\Categoría.cshtml" />
     <Content Include="Views\Admin\Marca.cshtml" />
     <Content Include="Views\Admin\MostrarListaMarca.cshtml" />
@@ -446,6 +444,10 @@
     <Content Include="Views\Papeleria\ListaProductos.cshtml" />
     <Content Include="Views\Admin\Opiniones.cshtml" />
     <Content Include="Views\Admin\MostrarListaOpiniones.cshtml" />
+    <Content Include="Views\Admin\ModificarOpiniones.cshtml" />
+    <Content Include="Views\Papeleria\ListaOpiniones.cshtml" />
+    <Content Include="Views\Admin\VerMensaje.cshtml" />
+    <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

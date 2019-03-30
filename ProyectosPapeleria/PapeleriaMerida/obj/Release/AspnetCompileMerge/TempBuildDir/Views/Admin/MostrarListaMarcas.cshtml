@@ -1,0 +1,44 @@
+﻿@using System.Data;
+@model DataTable
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">Datos guardados</div>
+            <div class="panel-body">
+                <div class="col-md-12">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Código</th>
+                                <th scope="col">Nombre</th>
+                                <th scope="col">Descripción / Slogan</th>
+                                <th scope="col">Imagen</th>
+                                <th scope="col">Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (DataRow item in Model.Rows)
+                            {
+                                <tr id="Fila_@item["idMarca"]">
+                                    <th scope="row">@item["idMarca"]</th>
+                                    <td>@item["nomMarca"]</td>
+                                    <td>@item["descMarca"]</td>
+                                    <td><img style="width: 150px; height: 100px" src="~/images/Marcas/@item["urlMarca"]" /></td>
+                                    <td>
+                                        <a type="button" rel="tooltip" title="Editar" class="btn btn-success btn-simple btn-xs" href="@Url.Action("ModificarMarca", "Admin", new { id =item["idMarca"]  })">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                        <a type="button" rel="tooltip" title="Eliminar" class="btn btn-danger btn-simple btn-xs" href="@Url.Action("EliminarMarca", "Admin", new { id =item["idMarca"]  })">
+                                            <i class="fa fa-times"></i>
+                                        </a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div><!-- /.panel-->
+    </div><!-- /.panel-->
+</div><!-- /.col-->
+

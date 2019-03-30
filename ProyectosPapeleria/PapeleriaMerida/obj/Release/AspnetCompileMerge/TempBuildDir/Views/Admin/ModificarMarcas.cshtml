@@ -1,0 +1,120 @@
+﻿@model PapeleriaMerida.Models.MarcasModel
+@{
+    ViewBag.Title = "ModificarMarcas";
+    Layout = "~/Views/Master/Admin.cshtml";
+}
+
+<!--/.Aqui inicia lo que va dentro del codigo campos-->
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Administrador</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Marcas/Proveedores</h2>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+        @using (Ajax.BeginForm("GuardarCambiosMarcas", "Admin", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Datos</div>
+                    <div class="panel-body">
+                        <div class="col-md-2">
+                            <div class="form-group">
+                                <label>Código</label>
+                                <input class="form-control" disabled name="codi" value="@Model.idMarca" type="text">
+                                <input class="form-control" name="cod" value="@Model.idMarca" type="text" style="visibility:hidden">
+                            </div>
+                        </div>
+                        <div class="col-md-10">
+                            <div class="form-group">
+                                <label>Nombre</label>
+                                <input class="form-control" name="nombre" value="@Model.nomMarca" required type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Slogan</label>
+                                <input class="form-control" name="slogan" value="@Model.sloganMarca" required type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Descripción</label>
+                                <textarea class="form-control" name="descripcion" required rows="3">@Model.descMarca</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Seleccione Imagen Logo</label>
+                                <input type="file" accept="image/*" name="logo" onchange="PreviewImagen(event)">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <img style="width: 250px; height: 200px" id="PreviewImageLogo" src="~/images/Marcas/@Model.logoMarca">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Seleccione Imagen Banner</label>
+                                <input type="file" accept="image/*" name="banner" onchange="PreviewImage(event)">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="form-group">
+                                <img style="width: 650px; height: 250px" id="PreviewImageID" src="~/images/Banner/@Model.bannerMarca">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-md btn-info" value="Guardar" />
+                            <a class="btn btn-md btn-danger" href="javascript:window.history.back();">Cancelar</a>
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                </div><!-- /.panel-->
+            </div><!-- /.panel-->
+        }
+    </div><!-- /.col-->
+    <div class="col-sm-12">
+        <p class="back-link">PAPEMÉRIDA-ADMIN <a href="#"></a></p>
+    </div>
+</div>
+
+<script type="text/javascript">
+    function PreviewImage(event) {
+        var output = document.getElementById('PreviewImageID');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+<script type="text/javascript">
+    function PreviewImagen(event) {
+        var output = document.getElementById('PreviewImageLogo');
+        output.src = URL.createObjectURL(event.target.files[0]);
+    };
+</script>
+

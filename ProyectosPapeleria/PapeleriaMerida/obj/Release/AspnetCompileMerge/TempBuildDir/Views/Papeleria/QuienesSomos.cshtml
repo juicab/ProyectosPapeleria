@@ -1,0 +1,95 @@
+﻿@model PapeleriaMerida.Models.EmpresaModel
+@{
+    ViewBag.Title = "QuienesSomos";
+    Layout = "~/Views/Master/Publico.cshtml";
+}
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('../../images/colores.jpg');">
+    <div class=""></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <h1 class="mb-2 bread" style="color:black;">Quiénes Somos</h1>
+                <p class="breadcrumbs" style="color:black;"><span class="mr-2" style="color:black;"><a style="color:black;" href="@Url.Action("Inicio","Papeleria")">Inicio <i style="color:black;" class="ion-ios-arrow-forward"></i></a></span> <span style="color:black;">Quiénes Somos </span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Papeleria a mayoreo -->
+<section class="ftco-section ftco-no-pt ftc-no-pb">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 wrap-about py-5 ftco-animate">
+                @*<h2 class="mb-4">Papelería Mérida</h2>*@
+                <div style="align-content:center; text-align:center;">
+                    <img src="~/images/lapiz.png" width="200" height="270">
+                </div>
+                <p>
+                    @Model.descripcion                    
+                </p>
+                <div class="col-md-12 wrap-about py-5 ftco-animate">
+                    <div class="row mt-5">
+                        <div class="col-lg-9">
+                            <div class="services-2 d-flex">
+                                <div class="mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+                                <div class="text">
+                                    <h3>MISIÓN</h3>
+                                    <p>@Model.mision</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="services-2 d-flex">
+                                <div class=" mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+                                <div class="text">
+                                    <img src="~/images/teamwork.png" width="220" height="220" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3">
+                            <div class="services-2 d-flex">
+                                <div class=" mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+                                <div class="text">
+                                    <img src="~/images/target.png" width="220" height="220" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-9">
+                            <div class="services-2 d-flex">
+                                <div class="mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+                                <div class="text">
+                                    <h3>VISIÓN</h3>
+                                    <p>@Model.vision</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-9">
+                            <div class="services-2 d-flex">
+                                <div class="mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+                                <div class="text">
+                                    <h3>VALORES</h3>
+                                    <p>@Model.valores</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-3">
+                            <div class="services-2 d-flex">
+                                <div class="mt-2 mr-3 d-flex justify-content-center align-items-center"></div>
+                                <div class="text">
+                                    <img src="~/images/award.png" width="200" height="200" />
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+
+        </div>
+    </div>
+</section>
+

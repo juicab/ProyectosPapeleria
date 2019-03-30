@@ -11,6 +11,6 @@ namespace PapeleriaMerida.Models
         public string titulo { get; set;}
         public string opinionCliente { get; set; }
         public string imagenCliente { get; set; }
-        public string statusOpinion { get; set; }
+        public int statusOpinion { get; set; }
     }
 }

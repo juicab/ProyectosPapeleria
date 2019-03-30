@@ -1,0 +1,48 @@
+﻿@model PapeleriaMerida.Models.MarcasModel
+@{
+    ViewBag.Title = "Categoría";
+    Layout = "~/Views/Master/Publico.cshtml";
+}
+
+<section class="hero-wrap hero-wrap-2" style="background-image: url('../../images/Banner/@Model.bannerMarca');">
+    <div class=""></div>
+    <div class="container">
+        <div class="row no-gutters slider-text align-items-center justify-content-center">
+            <div class="col-md-9 ftco-animate text-center">
+                <h1 class="mb-2 bread" style="color:black;">@Model.nomMarca</h1>
+                <p class="breadcrumbs" style="color:black;"><span class="mr-2" style="color:black;"><a style="color:black;" href="@Url.Action("Inicio","Papeleria")">Inicio <i style="color:black;" class="ion-ios-arrow-forward"></i></a></span> <span style="color:black;">@Model.nomMarca</span></p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Papeleria a mayoreo -->
+<br />
+<section class="ftco-section ftco-no-pt ftc-no-pb">
+    <div class="container wrap-about ftco-animate">
+        <div class="row">
+            <div class="col-md-7 well">
+                <h2>@Model.sloganMarca</h2>
+                <p style="text-align:justify;">
+                    @Model.descMarca
+                </p>
+            </div>
+            <div class="col-md-4 well">
+                <img src="~/images/Marcas/@Model.logoMarca" width="200" height="270">
+            </div>
+            <div class="col-md-1 well">
+
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ftco-section ftco-no-pb">
+    
+    <div class="container">
+        <h3>Productos&nbsp;@Model.nomMarca</h3>
+        <div class="row">
+            @{ Html.RenderAction("ListaProductos", "Papeleria", new { id = Model.idMarca });}
+        </div>
+    </div>
+</section>
+
+

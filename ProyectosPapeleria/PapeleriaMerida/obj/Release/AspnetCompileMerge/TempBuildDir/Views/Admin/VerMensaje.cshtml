@@ -1,0 +1,81 @@
+﻿@model PapeleriaMerida.Models.MensajeModel
+@{
+    ViewBag.Title = "VerMensaje";
+    Layout = "~/Views/Master/Admin.cshtml";
+}
+
+<!--/.Aqui inicia lo que va dentro del codigo campos-->
+<div class="col-sm-9 col-sm-offset-3 col-lg-10 col-lg-offset-2 main">
+    <div class="row">
+        <ol class="breadcrumb">
+            <li>
+                <a href="#">
+                    <em class="fa fa-home"></em>
+                </a>
+            </li>
+            <li class="active">Mensaje</li>
+        </ol>
+    </div><!--/.row-->
+
+    <div class="row">
+        <div class="col-lg-12">
+            <h2 class="page-header">Mensaje de&nbsp;@Model.nombre</h2>
+        </div>
+    </div><!--/.row-->
+
+
+    <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">Asunto:&nbsp;@Model.asunto</div>
+                    <div class="panel-body">
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Correo:</label>
+                                <input class="form-control" name="titulo1" disabled value="@Model.correo" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Teléfono:</label>
+                                <input class="form-control" name="titulo2" disabled value="@Model.telefono" type="text">
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label>Página del Mensaje:</label>
+                                <input class="form-control" name="titulo2" disabled value="@Model.pagina" type="text">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Mensaje:</label>
+                                <textarea class="form-control" name="descripcion" disabled rows="3">@Model.mensaje</textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-md-12">
+                            <a class="btn btn-md btn-info" href="javascript:window.history.back();"><em class="fa fa-arrow-left">&nbsp;</em>Regresar</a>
+                            <br />
+                            <br />
+                        </div>
+                    </div>
+                    <div class="panel-body">
+
+                    </div>
+
+                </div><!-- /.panel-->
+            </div><!-- /.panel-->
+    </div><!-- /.col-->
+    <div class="col-sm-12">
+        <p class="back-link">PAPEMÉRIDA-ADMIN <a href="#"></a></p>
+    </div>
+</div>
+
+
+
+
+

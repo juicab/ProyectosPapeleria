@@ -264,62 +264,7 @@
         <div class="row ftco-animate justify-content-center">
             <div class="col-md-12">
                 <div class="carousel-testimony owl-carousel">
-                    <div class="item">
-                        <div class="testimony-wrap d-flex">
-                            <div class="user-img mr-4" style="background-image: url(../../images/Clientes/cli1.jpg)">
-                            </div>
-                            <div class="text ml-2 bg-light">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="icon-quote-left"></i>
-                                </span>
-                                <p>Me encanta los modelos de novedades que manejan, Encuentras todo a la moda,Agende cita y me atendieron de maravilla.</p>
-                                <p class="name"></p>
-                                <span class="position">Cliente</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap d-flex">
-                            <div class="user-img mr-4" style="background-image: url(../../images/Clientes/cli2.jpg)">
-                            </div>
-                            <div class="text ml-2 bg-light">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="icon-quote-left"></i>
-                                </span>
-                                <p>La papeleria esta muy surtida, encontre todo lo que buscaba, los muchachos son muy amables.</p>
-                                <p class="name"></p>
-                                <span class="position">Cliente</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap d-flex">
-                            <div class="user-img mr-4" style="background-image: url(../../images/Clientes/cli3.jpg)">
-                            </div>
-                            <div class="text ml-2 bg-light">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="icon-quote-left"></i>
-                                </span>
-                                <p>Muy buen servicio, muy amable, me encanta su dia de postres todo muy delicioso.</p>
-                                <p class="name"></p>
-                                <span class="position">Cliente</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="testimony-wrap d-flex">
-                            <div class="user-img mr-4" style="background-image: url(../../images/Clientes/cli4.jpg)">
-                            </div>
-                            <div class="text ml-2 bg-light">
-                                <span class="quote d-flex align-items-center justify-content-center">
-                                    <i class="icon-quote-left"></i>
-                                </span>
-                                <p>Excelente precio, todo es de calidad y tiene garantia, no he tenido ningún problema.</p>
-                                <p class="name"></p>
-                                <span class="position">Cliente</span>
-                            </div>
-                        </div>
-                    </div>
+                    @{ Html.RenderAction("ListaOpiniones", "Papeleria");}
                 </div>
             </div>
         </div>

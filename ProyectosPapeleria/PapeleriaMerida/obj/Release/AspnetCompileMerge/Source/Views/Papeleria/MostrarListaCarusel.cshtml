@@ -1,0 +1,15 @@
+﻿@using System.Data;
+@model DataTable
+@foreach (DataRow item in Model.Rows)
+{
+    <div class="slider-item" style="background-image:url(../../images/Carusel/@item["urlCarusel"]);">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row no-gutters slider-text align-items-center justify-content-center" data-scrollax-parent="true">
+                <div class="col-md-8 text-center ftco-animate">
+                    <h1 class="mb-4">@item["titulo1"]<span>@item["titulo2"]</span></h1>
+                </div>
+            </div>
+        </div>
+    </div>
+}
