@@ -115,6 +115,7 @@
     <Content Include="fonts\ionicons\fonts\ionicons.svg" />
     <Content Include="fonts\open-iconic\open-iconic.svg" />
     <Content Include="Global.asax" />
+    <Content Include="google99e56e3bbd2223c3.html" />
     <Content Include="images\about.jpg" />
     <Content Include="images\av.jpg" />
     <Content Include="images\ba.png" />
@@ -224,6 +225,8 @@
     <Content Include="js\popper.min.js" />
     <Content Include="js\range.js" />
     <Content Include="js\scrollax.min.js" />
+    <Content Include="sitemap.txt" />
+    <Content Include="sitemap.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
