@@ -1,6 +1,7 @@
 ﻿
 @{
-    ViewBag.Title = "Contacto";
+    ViewBag.Title = "Contacto - PAPELES DE REGALO";
+    ViewBag.descripcion = "Papeles de Regalo , Estamos ubicados en Mérida Yucatán , Contactanos no te ARREPENTIRAS";
     Layout = "~/Views/Master/Publico.cshtml";
 }
 <style>
@@ -65,25 +66,40 @@
             </div>
         </div>
         <div class="row block-9">
+            @if (TempData["Mensaje"] != null)
+            {
+                <div class="alert alert-success col-md-12" style="text-align:center;" role="alert">
+                    <strong>¡BIEN!</strong> Su mensaje ha sido enviado con éxito. <strong>Pronto nos contactaremos con usted.</strong>
+                </div>
+            }
+            @if (ViewBag.error != null)
+            {
+                <div class="alert alert-danger col-md-12" style="text-align:center;" role="alert">
+                    <strong>¡OOPS!</strong> Al parecer hubo un error intentalo de nuevo más tarde.
+                </div>
+            }
             <div class="col-md-6 order-md-last pr-md-5">
-                @using (Ajax.BeginForm("EnviarCorreo", "Papeles", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
+                @using (Ajax.BeginForm("EnviarMensaje", "Papeles", new AjaxOptions { HttpMethod = "POST" }, new { enctype = "multipart/form-data" }))
                 {
                     @Html.AntiForgeryToken();
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="correo" placeholder="Correo" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" class="form-control" name="asunto" placeholder="Asunto" required>
-                        </div>
-                        <div class="form-group">
-                            <textarea name="mensaje" id="" cols="30" rows="7" class="form-control" placeholder="Mensaje" required></textarea>
-                        </div>
-                        <div class="form-group">
-                            <input type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5">
-                        </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="asunto" placeholder="Asunto" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="correo" placeholder="Correo" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="telefono" placeholder="Tel/Cel" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="mensaje" id="" cols="30" rows="7" class="form-control" placeholder="Mensaje" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Enviar Mensaje" class="btn btn-primary py-3 px-5">
+                    </div>
                 }
             </div>
 

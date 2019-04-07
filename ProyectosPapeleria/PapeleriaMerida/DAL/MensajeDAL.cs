@@ -4,8 +4,6 @@ using System.Linq;
 using System.Web;
 using System.Data.SqlClient;
 using PapeleriaMerida.Models;
-using System.Data.SqlClient;
-using PapeleriaMerida.Models;
 using System.Data;
 
 namespace PapeleriaMerida.DAL
@@ -23,7 +21,7 @@ namespace PapeleriaMerida.DAL
 
         public DataTable Mostrar()
         {
-            return oConexionDAL.TablaConnsulta("select * from Mensaje  where pagina ='Papeleria Merida' and statusMen = 1");
+            return oConexionDAL.TablaConnsulta("select * from Mensaje where statusMen = 1");
         }
 
         public MensajeModel ObtenerMensajeSeleccionado(int id)

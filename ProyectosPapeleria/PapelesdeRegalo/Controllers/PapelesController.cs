@@ -4,11 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Net.Mail;
+using PapelesdeRegalo.DAL;
 
 namespace PapelesdeRegalo.Controllers
 {
     public class PapelesController : Controller
     {
+
+        MensajeDAL oMensajeDAL;
         // GET: Papeles
         public ActionResult Inicio()
         {
@@ -72,5 +75,38 @@ namespace PapelesdeRegalo.Controllers
                 return RedirectToAction("Inicio,Papeles");
             }
         }
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnviarMensaje(string nombre, string correo, string asunto, string telefono, string mensaje)
+        {
+            oMensajeDAL = new MensajeDAL();
+            if (ModelState.IsValid)
+            {
+                int Resp = 0;
+                Resp = oMensajeDAL.Agregar(nombre, correo, asunto, telefono, mensaje);
+                if (Resp == 1)
+                {
+                    TempData["Mensaje"] = "Los Datos se han actualizado con éxito";
+                    return RedirectToAction("Contacto", "Papeles");
+                }
+                else
+                {
+                    ViewBag.error = "Al parecer hubo un Error";
+                    return RedirectToAction("Contacto", "Papeles");
+                }
+
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Contacto", "Papeles");
+            }
+        }
+
+
+
+
     }
 }
