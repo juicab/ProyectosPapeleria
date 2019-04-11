@@ -11,10 +11,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   </PropertyGroup>
   <ItemGroup>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>04/06/2019 16:57:40</publishTime>
+      <publishTime>04/09/2019 21:04:19</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>04/06/2019 16:57:40</publishTime>
+      <publishTime>04/09/2019 21:04:19</publishTime>
     </File>
     <File Include="bin/es/System.Web.Helpers.resources.dll">
       <publishTime>03/26/2019 15:21:44</publishTime>
@@ -41,10 +41,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:45</publishTime>
     </File>
     <File Include="bin/PapelesdeRegalo.dll">
-      <publishTime>04/06/2019 10:27:56</publishTime>
+      <publishTime>04/09/2019 15:22:05</publishTime>
     </File>
     <File Include="bin/PapelesdeRegalo.pdb">
-      <publishTime>04/06/2019 10:27:56</publishTime>
+      <publishTime>04/09/2019 15:22:05</publishTime>
     </File>
     <File Include="bin/roslyn/csc.exe">
       <publishTime>03/26/2019 15:21:45</publishTime>
@@ -263,7 +263,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
     <File Include="css/style.css">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 15:56:39</publishTime>
     </File>
     <File Include="fonts/.DS_Store">
       <publishTime>03/26/2019 15:21:37</publishTime>
@@ -349,6 +349,9 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="fonts/open-iconic/open-iconic.woff">
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
+    <File Include="google99e56e3bbd2223c3.html">
+      <publishTime>04/05/2019 19:57:42</publishTime>
+    </File>
     <File Include="images/.DS_Store">
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
@@ -359,16 +362,16 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
     <File Include="images/ba.png">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 15:37:01</publishTime>
     </File>
     <File Include="images/bannergalas1.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 15:37:27</publishTime>
     </File>
     <File Include="images/bannerp.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 15:35:44</publishTime>
     </File>
     <File Include="images/bannerpgalas.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 15:36:26</publishTime>
     </File>
     <File Include="images/bg_1.jpg">
       <publishTime>03/26/2019 15:21:37</publishTime>
@@ -383,7 +386,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
     <File Include="images/bg_ofi.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 15:21:24</publishTime>
     </File>
     <File Include="images/bg_ofi.png">
       <publishTime>03/26/2019 15:21:37</publishTime>
@@ -392,37 +395,37 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
     <File Include="images/bolsas/4777_2.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 17:28:13</publishTime>
     </File>
     <File Include="images/bolsas/av.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 17:35:52</publishTime>
     </File>
     <File Include="images/bolsas/BEBÉ1.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 17:41:00</publishTime>
     </File>
     <File Include="images/bolsas/BOUTIQUE BEBÉ.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 17:40:39</publishTime>
     </File>
     <File Include="images/bolsas/BOUTIQUE CUMPLEAÑOS.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 17:37:10</publishTime>
     </File>
     <File Include="images/bolsas/kraf.jpg">
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
     <File Include="images/bolsas/PARTY.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 17:36:30</publishTime>
     </File>
     <File Include="images/bolsas/trans.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 17:36:48</publishTime>
     </File>
     <File Include="images/bolsasb.jpg">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 15:37:59</publishTime>
     </File>
     <File Include="images/buyer.png">
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
     <File Include="images/caltom.png">
-      <publishTime>03/26/2019 15:21:37</publishTime>
+      <publishTime>04/09/2019 15:38:55</publishTime>
     </File>
     <File Include="images/contact.jpg">
       <publishTime>03/26/2019 15:21:37</publishTime>
@@ -431,34 +434,34 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:37</publishTime>
     </File>
     <File Include="images/curling.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:03:30</publishTime>
     </File>
     <File Include="images/descarga-pdf.png">
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/div_galas.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:14:50</publishTime>
     </File>
     <File Include="images/div_regalo.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 16:11:22</publishTime>
     </File>
     <File Include="images/free-shipping.png">
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/galas.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 15:39:21</publishTime>
     </File>
     <File Include="images/galaspage.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:15:27</publishTime>
     </File>
     <File Include="images/gift.png">
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/gramark.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 15:40:03</publishTime>
     </File>
     <File Include="images/gramarkpage.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:17:11</publishTime>
     </File>
     <File Include="images/loc.png">
       <publishTime>03/26/2019 15:21:38</publishTime>
@@ -467,58 +470,58 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/monos.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:05:01</publishTime>
     </File>
     <File Include="images/papeles.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:05:44</publishTime>
     </File>
     <File Include="images/papeles/1.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:21:06</publishTime>
     </File>
     <File Include="images/papeles/2.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:21:30</publishTime>
     </File>
     <File Include="images/papeles/3.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:21:53</publishTime>
     </File>
     <File Include="images/papeles/4.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:22:14</publishTime>
     </File>
     <File Include="images/papeles/5.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:22:51</publishTime>
     </File>
     <File Include="images/papeles/6.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:23:10</publishTime>
     </File>
     <File Include="images/papeles/7.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:24:53</publishTime>
     </File>
     <File Include="images/papeles/8.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:25:08</publishTime>
     </File>
     <File Include="images/papeles/galas1.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:25:26</publishTime>
     </File>
     <File Include="images/papeles/galas2.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:25:45</publishTime>
     </File>
     <File Include="images/papeles/galas3.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:26:01</publishTime>
     </File>
     <File Include="images/papeles/galas4.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:26:29</publishTime>
     </File>
     <File Include="images/papeles/galas5.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:26:45</publishTime>
     </File>
     <File Include="images/papeles/galas6.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:27:04</publishTime>
     </File>
     <File Include="images/papeles/galas7.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:27:18</publishTime>
     </File>
     <File Include="images/papeles/galas8.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:27:38</publishTime>
     </File>
     <File Include="images/papeles/m1.jpg">
       <publishTime>03/26/2019 15:21:38</publishTime>
@@ -548,7 +551,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/payment.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:01:03</publishTime>
     </File>
     <File Include="images/regalos-2.jpg">
       <publishTime>03/26/2019 15:21:38</publishTime>
@@ -557,7 +560,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/ribocel.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:02:44</publishTime>
     </File>
     <File Include="images/ribocel/bolsas.png">
       <publishTime>03/26/2019 15:21:38</publishTime>
@@ -566,67 +569,67 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/ribocel/moños.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:08:29</publishTime>
     </File>
     <File Include="images/ribocel/p1.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:09:25</publishTime>
     </File>
     <File Include="images/ribocel/p2.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:09:54</publishTime>
     </File>
     <File Include="images/ribocel/p3.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:10:13</publishTime>
     </File>
     <File Include="images/ribocel/p4.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:11:10</publishTime>
     </File>
     <File Include="images/ribocel/p5.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:11:34</publishTime>
     </File>
     <File Include="images/ribocel/p6.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:11:57</publishTime>
     </File>
     <File Include="images/ribocel/p7.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:12:18</publishTime>
     </File>
     <File Include="images/ribocel/p8.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:12:45</publishTime>
     </File>
     <File Include="images/ribocel/p9.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:13:01</publishTime>
     </File>
     <File Include="images/ribocel/papel.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:13:18</publishTime>
     </File>
     <File Include="images/ribocel/rulin.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:07:30</publishTime>
     </File>
     <File Include="images/ribocelbb.png">
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/ribore.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:04:16</publishTime>
     </File>
     <File Include="images/somos.jpg">
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="images/target.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:01:58</publishTime>
     </File>
     <File Include="images/teamwork.png">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:02:20</publishTime>
     </File>
     <File Include="images/work-1.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 16:58:06</publishTime>
     </File>
     <File Include="images/work-2.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 16:58:55</publishTime>
     </File>
     <File Include="images/work-3.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:00:13</publishTime>
     </File>
     <File Include="images/work-4.jpg">
-      <publishTime>03/26/2019 15:21:38</publishTime>
+      <publishTime>04/09/2019 17:00:38</publishTime>
     </File>
     <File Include="js/.DS_Store">
       <publishTime>03/26/2019 15:21:38</publishTime>
@@ -683,7 +686,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:38</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>04/06/2019 16:57:36</publishTime>
+      <publishTime>04/09/2019 21:04:15</publishTime>
     </File>
     <File Include="scss/.DS_Store">
       <publishTime>03/26/2019 15:21:44</publishTime>
@@ -940,26 +943,32 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
     <File Include="scss/style.scss">
       <publishTime>03/26/2019 15:21:44</publishTime>
     </File>
+    <File Include="sitemap.txt">
+      <publishTime>04/06/2019 15:29:56</publishTime>
+    </File>
+    <File Include="sitemap.xml">
+      <publishTime>04/06/2019 15:28:33</publishTime>
+    </File>
     <File Include="Views/Master/Publico.cshtml">
-      <publishTime>04/06/2019 16:54:22</publishTime>
+      <publishTime>04/09/2019 20:29:00</publishTime>
     </File>
     <File Include="Views/Papeles/Contacto.cshtml">
-      <publishTime>04/06/2019 14:03:46</publishTime>
+      <publishTime>04/09/2019 20:59:47</publishTime>
     </File>
     <File Include="Views/Papeles/Galas.cshtml">
-      <publishTime>04/06/2019 15:56:16</publishTime>
+      <publishTime>04/09/2019 20:53:50</publishTime>
     </File>
     <File Include="Views/Papeles/Granmark.cshtml">
-      <publishTime>04/06/2019 14:03:46</publishTime>
+      <publishTime>04/09/2019 20:51:12</publishTime>
     </File>
     <File Include="Views/Papeles/Inicio.cshtml">
-      <publishTime>04/06/2019 14:03:46</publishTime>
+      <publishTime>04/09/2019 20:54:01</publishTime>
     </File>
     <File Include="Views/Papeles/QuiénesSomos.cshtml">
-      <publishTime>04/06/2019 15:49:17</publishTime>
+      <publishTime>04/09/2019 20:56:11</publishTime>
     </File>
     <File Include="Views/Papeles/Regalos.cshtml">
-      <publishTime>04/06/2019 14:33:37</publishTime>
+      <publishTime>04/09/2019 20:54:01</publishTime>
     </File>
     <File Include="Views/web.config">
       <publishTime>03/26/2019 15:21:37</publishTime>

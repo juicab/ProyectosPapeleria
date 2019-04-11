@@ -35,6 +35,7 @@
                                     <th scope="col">Asunto</th>
                                     <th scope="col">Nombre del Cliente</th>
                                     <th scope="col">Correo Electrónico</th>
+                                    <th scope="col">Sitio WEB</th>
                                     <th scope="col">Acciones</th>
                                 </tr>
                             </thead>
@@ -45,6 +46,7 @@
                                     <th scope="row">@item["Asunto"]</th>
                                     <td>@item["nombre"]</td>
                                     <td>@item["correo"]</td>
+                                    <td>@item["pagina"]</td>
                                     <td>
                                         <a type="button" rel="tooltip" title="Ver" class="btn btn-success btn-simple btn-xs" href="@Url.Action("VerMensaje", "Admin", new { id =item["idMensaje"]  })">
                                             <i class="fa fa-eye"></i>

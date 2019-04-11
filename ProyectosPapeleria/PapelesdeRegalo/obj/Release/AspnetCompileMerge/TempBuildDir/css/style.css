@@ -8362,8 +8362,7 @@ textarea.form-control {
     right: 0;
     content: '';
     z-index: -1;
-    opacity: .1;
-    background: #000000; }
+    }
 
 .ftco-counter {
   padding: 6em 0; }

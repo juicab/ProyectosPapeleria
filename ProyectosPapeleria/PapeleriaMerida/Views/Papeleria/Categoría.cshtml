@@ -1,6 +1,10 @@
 ﻿@model PapeleriaMerida.Models.MarcasModel
 @{
-    ViewBag.Title = "Categoría";
+    ViewBag.Title = " ▷";
+    ViewBag.Parentesis = Model.nomMarca;
+    ViewBag.Title2 = Model.sloganMarca;
+    ViewBag.descripcion = "✅" + Model.descMarca;
+    ViewBag.robots = "index, follow, archive";
     Layout = "~/Views/Master/Publico.cshtml";
 }
 
