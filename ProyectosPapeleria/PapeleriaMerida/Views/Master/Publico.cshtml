@@ -61,7 +61,7 @@
 
         .col {
             border-radius: 20px;
-            background-color: #F1463E;
+            background-color: #EF3027;
             margin-left: 8px;
             /*font-weight: bold;*/
             color: black;
@@ -111,13 +111,14 @@
                     <li class="nav-item"><a href="@Url.Action("Inicio","Papeleria")" class="nav-link ">Inicio</a></li>
                     <li class="nav-item "><a href="@Url.Action("NuestrasMarcas","Papeleria")" class="nav-link">Nuestras Marcas</a></li>
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoria</a>
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Categoría</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                             @{ Html.RenderAction("ListaCategoria", "Papeleria");}
                         </div>
                     </li>
                     <li class="nav-item"><a href="@Url.Action("QuienesSomos","Papeleria")" class="nav-link">Quiénes Somos</a></li>
                     <li class="nav-item "><a href="@Url.Action("Contacto","Papeleria")" class="nav-link">Contacto</a></li>
+                    <li class="nav-item"><a href="@Url.Action("Catalogos","Papeleria")" class="nav-link col" style="color:white;"><b>CATÁLOGOS</b></a></li>
 
                 </ul>
             </div>

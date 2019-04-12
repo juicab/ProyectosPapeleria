@@ -7,7 +7,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
   <PropertyGroup>
     <TimeStampOfAssociatedLegacyPublishXmlFile />
     <EncryptedPassword>AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAApdNQ+8L7VkihtdQws/qeiAAAAAACAAAAAAAQZgAAAAEAACAAAAAaN1w7BM1o8yLxA7dX7peVT1gIwC+X6CuMf9hffU+ZjAAAAAAOgAAAAAIAACAAAAD6Rzd+IG70DLdIDoZXBIHSh9slzFBWYtVQaSfw2Px7PiAAAAAzFf32KvfeDkGgYIMYqzEsjBb4mqtrhOm0jAeWpyTKs0AAAACJ0JMPSOJgfEVb6uPzSE6GCx5mMA/QVM37Iq4p0QzuDxdCz/noxa73jEZxJCBOb0a3DvmNkOwGPE3rxy9PIblB</EncryptedPassword>
-    <_PublishTargetUrl>ftp://107.180.0.7/papemerida.papelesderegalo.com.mx</_PublishTargetUrl>
+    <_PublishTargetUrl>ftp://107.180.0.7/papemerida.bicsureste.com.mx</_PublishTargetUrl>
   </PropertyGroup>
   <ItemGroup>
     <File Include="admin/css/bootstrap-table.css">
@@ -173,10 +173,10 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:33</publishTime>
     </File>
     <File Include="bin/App_global.asax.compiled">
-      <publishTime>04/10/2019 19:45:09</publishTime>
+      <publishTime>04/11/2019 15:18:41</publishTime>
     </File>
     <File Include="bin/App_global.asax.dll">
-      <publishTime>04/10/2019 19:45:08</publishTime>
+      <publishTime>04/11/2019 15:18:41</publishTime>
     </File>
     <File Include="bin/es/System.Web.Helpers.resources.dll">
       <publishTime>03/26/2019 15:21:44</publishTime>
@@ -791,7 +791,7 @@ edite el archivo MSBuild. Visite https://go.microsoft.com/fwlink/?LinkID=208121 
       <publishTime>03/26/2019 15:21:34</publishTime>
     </File>
     <File Include="PrecompiledApp.config">
-      <publishTime>04/10/2019 19:45:03</publishTime>
+      <publishTime>04/11/2019 15:18:36</publishTime>
     </File>
     <File Include="scss/.DS_Store">
       <publishTime>03/26/2019 15:21:36</publishTime>

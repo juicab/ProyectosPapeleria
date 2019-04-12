@@ -21,7 +21,7 @@ namespace PapeleriaMerida.DAL
 
         public DataTable Mostrar()
         {
-            return oConexionDAL.TablaConnsulta("select * from Mensaje where statusMen = 1");
+            return oConexionDAL.TablaConnsulta("select * from Mensaje where statusMen = 1 order by idMensaje desc");
         }
 
         public MensajeModel ObtenerMensajeSeleccionado(int id)

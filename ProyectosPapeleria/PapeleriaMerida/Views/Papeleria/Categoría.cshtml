@@ -7,7 +7,12 @@
     ViewBag.robots = "index, follow, archive";
     Layout = "~/Views/Master/Publico.cshtml";
 }
-
+<style>
+    .imgResponsive {
+        width: 100%;
+        height: auto;
+    }
+</style>
 <section class="hero-wrap hero-wrap-2" style="background-image: url('../../images/Banner/@Model.bannerMarca');">
     <div class=""></div>
     <div class="container">
@@ -24,17 +29,17 @@
 <section class="ftco-section ftco-no-pt ftc-no-pb">
     <div class="container wrap-about ftco-animate">
         <div class="row">
-            <div class="col-md-7 well">
+            <div class="col-md-6 well">
                 <h2>@Model.sloganMarca</h2>
                 <p style="text-align:justify;">
                     @Model.descMarca
                 </p>
             </div>
-            <div class="col-md-4 well">
-                <img src="~/images/Marcas/@Model.logoMarca" width="200" height="270">
+            <div class="col-md-3 well">
+                <img class="imgResponsive" src="~/images/Marcas/@Model.logoMarca">
             </div>
-            <div class="col-md-1 well">
-
+            <div class="col-md-3 well">
+                <a href="@Url.Action("Catalogos","Papeleria")"><img class="imgResponsive" src="~/images/DescargaPDF.png"></a>
             </div>
         </div>
     </div>

@@ -171,6 +171,8 @@
     <Content Include="images\Clientes\cli3.jpg" />
     <Content Include="images\Clientes\cli4.jpg" />
     <Content Include="images\colores.jpg" />
+    <Content Include="images\descarga.png" />
+    <Content Include="images\DescargaPDF.png" />
     <Content Include="images\descargar.png" />
     <Content Include="images\emoji.png" />
     <Content Include="images\envio.png" />
@@ -448,6 +450,8 @@
     <Content Include="Views\Papeleria\ListaOpiniones.cshtml" />
     <Content Include="Views\Admin\VerMensaje.cshtml" />
     <None Include="Properties\PublishProfiles\CustomProfile.pubxml" />
+    <Content Include="Views\Papeleria\Catalogos.cshtml" />
+    <Content Include="Views\Papeleria\ListaCatalogos.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
