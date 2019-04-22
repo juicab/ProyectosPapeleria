@@ -105,7 +105,30 @@ namespace PapelesdeRegalo.Controllers
             }
         }
 
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public JsonResult EnviarMensajeQuery(string nombre, string correo, string asunto, string telefono, string mensaje)
+        {
+            oMensajeDAL = new MensajeDAL();
+            if (ModelState.IsValid)
+            {
+                int Resp = 0;
+                Resp = oMensajeDAL.Agregar(nombre, correo, asunto, telefono, mensaje);
+                if (Resp == 1)
+                {
+                    return Json(Resp);
+                }
+                else
+                {
+                    return Json(Resp);
+                }
 
+            }
+            else
+            {
+                return Json(1);
+            }
+        }
 
 
     }

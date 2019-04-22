@@ -1,5 +1,11 @@
 ﻿@using System.Data;
 @model DataTable
+    <style>
+        .imgResponsive {
+            width: 100%;
+            height: auto;
+        }
+    </style>
 <div class="col-md-5 order-md-last wrap-about py-5 wrap-about bg-light">
     <div class="text px-4 ftco-animate">
         <h4 class="mb-4">Bienvenido a la era de la Tecnología</h4>
@@ -12,8 +18,8 @@
                 <p>@item["fechaCat"]</p>
                 <table>
                     <tr>
-                        <th><img src="../../images/pdf.png" width="70" height="70"></th>
-                        <th><a href="~/admin/docs/@item["docuCat"]" download="Catálogo @item["nombreCat"] @item["fechaCat"]"><img src="../../images/clic.png" width="200" height="50"></a></th>
+                        <th><img class="" src="../../images/pdf.png" width="70" height="70"></th>
+                        <th><a href="~/admin/docs/@item["docuCat"]" download="Catálogo @item["nombreCat"] @item["fechaCat"]"><img class="" src="../../images/clic.png" width="200" height="50"></a></th>
                     </tr>
                 </table>
             </div>

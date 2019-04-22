@@ -18,6 +18,12 @@ namespace PapeleriaMerida.Controllers
         OpinionesDAL oOpinionesDAL;
         // GET: Papeleria
 
+
+       public ActionResult Reparacion()
+        {
+            return View();
+        }
+
         public ActionResult Catalogos()
         {
             return View();
@@ -49,7 +55,7 @@ namespace PapeleriaMerida.Controllers
         }
         public ActionResult Error()
         {
-            return View();
+            return RedirectToAction("Inicio", "Papeleria");
         }
         public ActionResult Inicio()
         {
@@ -93,10 +99,10 @@ namespace PapeleriaMerida.Controllers
         }
 
 
-        public ActionResult Categoría(int id)
+        public ActionResult Categoría(string id)
         {
             oMarcasDAL = new MarcasDAL();
-            return View(oMarcasDAL.ObtenerMarcaSeleccionada(id));
+            return View(oMarcasDAL.ObtenerMarcaSeleccionadaNombre(id));
         }
 
 

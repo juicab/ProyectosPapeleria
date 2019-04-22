@@ -104,11 +104,12 @@
             </div><!-- /.panel-->
         }
     </div><!-- /.col-->
+    @{ Html.RenderAction("MostrarListaOpiniones", "Admin");}
     <div class="col-sm-12">
         <p class="back-link">PAPEMÉRIDA-ADMIN <a href="#"></a></p>
     </div>
 </div>
-@{ Html.RenderAction("MostrarListaOpiniones", "Admin");}
+
 <script type="text/javascript">
     function PreviewImage(event) {
         var output = document.getElementById('PreviewImageID');

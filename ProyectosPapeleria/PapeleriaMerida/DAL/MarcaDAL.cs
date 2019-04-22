@@ -53,5 +53,18 @@ namespace PapeleriaMerida.DAL
             Marca.statusmarca = Convert.ToInt32(row["statusmarca"]);
             return Marca;
         }
+        public MarcaModel ObtenerMarcaSeleccionadaNombre(string id)
+        {
+            var Marca = new MarcaModel();
+            String StrBuscar = string.Format("select * from Marca where nomMarca=" + id + "");
+            DataTable Datos = oConexionDAL.TablaConnsulta(StrBuscar);
+            DataRow row = Datos.Rows[0];
+            Marca.idMarca = Convert.ToInt32(row["idMarca"]);
+            Marca.nomMarca = row["nomMarca"].ToString();
+            Marca.descMarca = row["descMarca"].ToString();
+            Marca.urlMarca = row["urlMarca"].ToString();
+            Marca.statusmarca = Convert.ToInt32(row["statusmarca"]);
+            return Marca;
+        }
     }
 }

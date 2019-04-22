@@ -45,6 +45,23 @@ namespace PapeleriaMerida.DAL
             return Marca;
         }
 
+
+        public MarcasModel ObtenerMarcaSeleccionadaNombre(string id)
+        {
+            var Marca = new MarcasModel();
+            String StrBuscar = string.Format("select * from Marcas where nomMarca='" + id + "'");
+            DataTable Datos = oConexionDAL.TablaConnsulta(StrBuscar);
+            DataRow row = Datos.Rows[0];
+            Marca.idMarca = Convert.ToInt32(row["idMarca"]);
+            Marca.nomMarca = row["nomMarca"].ToString();
+            Marca.descMarca = row["descMarca"].ToString();
+            Marca.sloganMarca = row["sloganMarca"].ToString();
+            Marca.logoMarca = row["logoMarca"].ToString();
+            Marca.bannerMarca = row["bannerMarca"].ToString();
+            Marca.statusMarca = Convert.ToInt32(row["statusMarca"]);
+            return Marca;
+        }
+
         public int ModificarCompleto(string nombre, string descripcion, string slogan, string logo, string banner,int id)
         {
             string query = "UPDATE [padmin].[Marcas] SET [nomMarca] = '"+nombre+"' ,[descMarca] = '"+descripcion+"' ,[sloganMarca] = '"+slogan+"' ,[logoMarca] = '"+logo+"' ,[bannerMarca] = '"+banner+"' WHERE idMarca="+id+"";

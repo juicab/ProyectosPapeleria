@@ -75,6 +75,10 @@
             color: black;
             text-align: center;
         }
+        .imgResponsive {
+            width: 100%;
+            height: auto;
+        }
     </style>
 </head>
 <body>
@@ -118,6 +122,7 @@
                     </li>
                     <li class="nav-item"><a href="@Url.Action("QuienesSomos","Papeleria")" class="nav-link">Quiénes Somos</a></li>
                     <li class="nav-item "><a href="@Url.Action("Contacto","Papeleria")" class="nav-link">Contacto</a></li>
+                    <li class="nav-item "><a href="@Url.Action("Reparacion","Papeleria")" class="nav-link">Reparación de Computadoras</a></li>
                     <li class="nav-item"><a href="@Url.Action("Catalogos","Papeleria")" class="nav-link col" style="color:white;"><b>CATÁLOGOS</b></a></li>
 
                 </ul>
@@ -132,7 +137,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12 text-center">
-                    <img src="~/images/footer.png" width="1100" height="45" />
+                    <img class="imgResponsive" src="~/images/footer.png" width="1100" height="45" />
                 </div>
                 <div class="col-md-12 text-center">
                     <p>

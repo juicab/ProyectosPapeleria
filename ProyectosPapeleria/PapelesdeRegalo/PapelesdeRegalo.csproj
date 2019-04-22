@@ -268,6 +268,10 @@
     <Content Include="fonts\open-iconic\open-iconic.woff" />
     <Content Include="images\.DS_Store" />
     <Content Include="js\.DS_Store" />
+    <Content Include="Catalogos\bolsas.pdf" />
+    <Content Include="Catalogos\papeles.pdf" />
+    <Content Include="Content\bootstrap\variables.less" />
+    <Content Include="Content\bootstrap\mixins.less" />
     <None Include="packages.config" />
     <Content Include="Views\Master\Publico.cshtml" />
     <Content Include="Views\Papeles\Inicio.cshtml" />
@@ -371,7 +375,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Catalogos\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
