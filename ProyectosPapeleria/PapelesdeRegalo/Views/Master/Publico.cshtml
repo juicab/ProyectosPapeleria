@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="@ViewBag.descripcion">
+    <meta name="robots" content="@ViewBag.robots" />
     <link rel="icon" type="image/png" href="../../images/gift.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
@@ -14,15 +15,10 @@
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/magnific-popup.css">
-
     <link rel="stylesheet" href="~/css/aos.css">
-
     <link rel="stylesheet" href="~/css/ionicons.min.css">
-
     <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="~/css/jquery.timepicker.css">
-
-
     <link rel="stylesheet" href="~/css/flaticon.css">
     <link rel="stylesheet" href="~/css/icomoon.css">
     <link rel="stylesheet" href="~/css/style.css">
@@ -123,7 +119,7 @@
     </style>
 </head>
 <body>
-    
+
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
         <div class="container">
             <a class="navbar-brand" href="@Url.Action("Inicio","Papeles")"><img src="../../images/logo.png" width="250" height="50"></a>
@@ -135,12 +131,13 @@
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item prod"><a href="@Url.Action("Granmark","Papeles")" class="nav-link"><b>Granmark</b></a></li>
-                    
+
                     <li class="nav-item qui"><a href="@Url.Action("Galas","Papeles")" class="nav-link"><b>Galas</b></a></li>
                     @*<li class="nav-item inio"><a href="@Url.Action("Bolsas","Papeles")" class="nav-link"><b>Bolsas</b></a></li>*@
                     <li class="nav-item cont"><a href="@Url.Action("Regalos","Papeles")" class="nav-link"><b>Regalos</b></a></li>
                     <li class="nav-item ini"><a href="@Url.Action("QuiénesSomos","Papeles")" class="nav-link"><b>Quiénes Somos</b></a></li>
                     <li class="nav-item co"><a href="@Url.Action("Contacto","Papeles")" class="nav-link"><b>Contacto</b></a></li>
+                    @*<li class="nav-item " data-toggle="modal" style="background-color:red;"><a href="#myModal" class="trigger-btn nav-link" data-toggle="modal"><b>Promociones</b></a></li>*@
                 </ul>
             </div>
         </div>
@@ -164,7 +161,37 @@
 
     <!-- loader -->
     <div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" /><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#F96D00" /></svg></div>
-
+    <div id="myModal" class="modal fade">
+        <div class="modal-dialog modal-login">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Sign In</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <form action="/examples/actions/confirmation.php" method="post">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-user"></i></span>
+                                <input type="text" class="form-control" name="username" placeholder="Username" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="fa fa-lock"></i></span>
+                                <input type="text" class="form-control" name="password" placeholder="Password" required="required">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block btn-lg">Sign In</button>
+                        </div>
+                        <p class="hint-text"><a href="#">Forgot Password?</a></p>
+                    </form>
+                </div>
+                <div class="modal-footer">Don't have an account? <a href="#">Create one</a></div>
+            </div>
+        </div>
+    </div>
 
     <script src="~/js/jquery.min.js"></script>
     <script src="~/js/jquery-migrate-3.0.1.min.js"></script>
@@ -183,6 +210,7 @@
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="~/js/google-map.js"></script>
     <script src="~/js/main.js"></script>
+    
 
 </body>
 </html>

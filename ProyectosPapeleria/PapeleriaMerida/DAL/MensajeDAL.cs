@@ -19,6 +19,13 @@ namespace PapeleriaMerida.DAL
             return oConexionDAL.EjecutarSQL(query);
         }
 
+        public int AgregarCompu(string nombre, string correo, string asunto, string telefono, string mensaje)
+        {
+            string query = "INSERT INTO [dbo].[Mensaje]([nombre],[correo],[asunto],[telefono],[pagina],[mensaje],[statusMen]) VALUES ('" + nombre + "','" + correo + "','" + asunto + "','" + telefono + "','Dr. Computación','" + mensaje + "',1)";
+            return oConexionDAL.EjecutarSQL(query);
+        }
+
+
         public DataTable Mostrar()
         {
             return oConexionDAL.TablaConnsulta("select * from Mensaje where statusMen = 1 order by idMensaje desc");

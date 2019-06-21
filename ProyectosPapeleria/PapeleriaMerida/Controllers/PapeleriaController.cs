@@ -17,8 +17,10 @@ namespace PapeleriaMerida.Controllers
         ProductoDAL oProductos;
         OpinionesDAL oOpinionesDAL;
         // GET: Papeleria
-
-
+       public ActionResult Promociones()
+        {
+            return View();
+        }
        public ActionResult Reparacion()
         {
             return View();

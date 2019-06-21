@@ -37,7 +37,7 @@ namespace PapeleriaMerida.DAL
 
         public DataTable Mostrar()
         {
-            return oConexionDAL.TablaConnsulta("select * from Carusel where statusCarusel=1");
+            return oConexionDAL.TablaConnsulta("select * from Carusel where statusCarusel=1 order by idCarusel desc");
         }
 
         public CaruselModel ObtenerCaruselSeleccionado(int id)

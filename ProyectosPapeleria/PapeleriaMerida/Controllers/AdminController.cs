@@ -6,6 +6,7 @@ using System.Web.Mvc;
 using PapeleriaMerida.DAL;
 using PapeleriaMerida.Models;
 using System.Data;
+using System.IO;
 
 namespace PapeleriaMerida.Controllers
 {
@@ -101,6 +102,36 @@ namespace PapeleriaMerida.Controllers
             {
                 ViewBag.error = "Al parecer hubo un Error";
                 return RedirectToAction("Contacto", "Papeleria");
+            }
+        }
+
+
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult EnviarMensajeCompu(string nombre, string correo, string asunto, string telefono, string mensaje)
+        {
+            oMensajeDAL = new MensajeDAL();
+            if (ModelState.IsValid)
+            {
+                int Resp = 0;
+                Resp = oMensajeDAL.AgregarCompu(nombre, correo, asunto, telefono, mensaje);
+                if (Resp == 1)
+                {
+                    TempData["Mensaje"] = "Los Datos se han actualizado con éxito";
+                    return RedirectToAction("Reparacion", "Papeleria");
+                }
+                else
+                {
+                    ViewBag.error = "Al parecer hubo un Error";
+                    return RedirectToAction("Reparacion", "Papeleria");
+                }
+
+            }
+            else
+            {
+                ViewBag.error = "Al parecer hubo un Error";
+                return RedirectToAction("Reparacion", "Papeleria");
             }
         }
 
@@ -541,12 +572,17 @@ namespace PapeleriaMerida.Controllers
         {
             string rutasave;
             string error = "1";
+            
+            string RutaArchivoCompu = "C:\\Catalogos\\" + file.FileName; ;
+            string NombreArchivo = file.FileName;
+
             SubirArchivoDAL oSubirArchivoDAL = new SubirArchivoDAL();
             if (file != null)
             {
                 string ruta = Server.MapPath("~/admin/docs/");
                 ruta += file.FileName;
-                oSubirArchivoDAL.SubirArchivo(ruta, file);
+                //oSubirArchivoDAL.SubirArchivo(ruta, file);
+                oSubirArchivoDAL.Upload(RutaArchivoCompu, NombreArchivo);
                 string confirmacion = oSubirArchivoDAL.confirmacion;
                 rutasave = file.FileName;
                 if (confirmacion == "guardado")

@@ -224,8 +224,10 @@
     <Content Include="js\popper.min.js" />
     <Content Include="js\range.js" />
     <Content Include="js\scrollax.min.js" />
-    <Content Include="sitemap.txt" />
-    <Content Include="sitemap.xml" />
+    <Content Include="sitemap-papel.txt" />
+    <Content Include="sitemap-papel.xml" />
+    <Content Include="sitemap-papeles.txt" />
+    <Content Include="sitemap-papeles.xml" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -272,6 +274,7 @@
     <Content Include="Catalogos\papeles.pdf" />
     <Content Include="Content\bootstrap\variables.less" />
     <Content Include="Content\bootstrap\mixins.less" />
+    <Content Include="Catalogos\Novedades.pdf" />
     <None Include="packages.config" />
     <Content Include="Views\Master\Publico.cshtml" />
     <Content Include="Views\Papeles\Inicio.cshtml" />

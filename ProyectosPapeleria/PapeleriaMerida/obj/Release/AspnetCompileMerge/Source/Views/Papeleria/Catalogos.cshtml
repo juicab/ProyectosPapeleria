@@ -7,14 +7,19 @@
     ViewBag.robots = "index, follow, archive";
     Layout = "~/Views/Master/Publico.cshtml";
 }
-
+<style>
+    .imgResponsive {
+        width: 100%;
+        height: auto;
+    }
+</style>
 <section class="hero-wrap hero-wrap-2" style="background-image: url('../../images/escolares.jpg');">
     <div class=""></div>
     <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
             <div class="col-md-9 ftco-animate text-center">
                 <h1 class="mb-2 bread" style="color:black;">Catálogos</h1>
-                <p class="breadcrumbs" style="color:black;"><span class="mr-2" style="color:black;"><a style="color:black;" href="@Url.Action("Inicio", "Papeleria")">Inicio <i style="color:black;" class="ion-ios-arrow-forward"></i></a></span> <span style="color:black;">Contacto</span></p>
+                <p class="breadcrumbs" style="color:black;"><span class="mr-2" style="color:black;"><a style="color:black;" href="@Url.Action("Inicio", "Papeleria")">Inicio <i style="color:black;" class="ion-ios-arrow-forward"></i></a></span> <span style="color:black;">Contálogos</span></p>
             </div>
         </div>
     </div>

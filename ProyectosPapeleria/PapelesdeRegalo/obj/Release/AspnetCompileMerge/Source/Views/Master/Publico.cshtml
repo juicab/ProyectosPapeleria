@@ -5,25 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="@ViewBag.descripcion">
+    <meta name="robots" content="@ViewBag.robots" />
     <link rel="icon" type="image/png" href="../../images/gift.png">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
-
     <link rel="stylesheet" href="~/css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="~/css/animate.css">
-
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="~/css/owl.carousel.min.css">
     <link rel="stylesheet" href="~/css/owl.theme.default.min.css">
     <link rel="stylesheet" href="~/css/magnific-popup.css">
-
     <link rel="stylesheet" href="~/css/aos.css">
-
     <link rel="stylesheet" href="~/css/ionicons.min.css">
-
     <link rel="stylesheet" href="~/css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="~/css/jquery.timepicker.css">
-
-
     <link rel="stylesheet" href="~/css/flaticon.css">
     <link rel="stylesheet" href="~/css/icomoon.css">
     <link rel="stylesheet" href="~/css/style.css">
@@ -116,6 +111,7 @@
         .pos {
             position: absolute;
         }
+
         .imgResponsive {
             width: 100%;
             height: auto;
@@ -135,6 +131,7 @@
                 <ul class="navbar-nav ml-auto">
 
                     <li class="nav-item prod"><a href="@Url.Action("Granmark","Papeles")" class="nav-link"><b>Granmark</b></a></li>
+                    
                     <li class="nav-item qui"><a href="@Url.Action("Galas","Papeles")" class="nav-link"><b>Galas</b></a></li>
                     @*<li class="nav-item inio"><a href="@Url.Action("Bolsas","Papeles")" class="nav-link"><b>Bolsas</b></a></li>*@
                     <li class="nav-item cont"><a href="@Url.Action("Regalos","Papeles")" class="nav-link"><b>Regalos</b></a></li>

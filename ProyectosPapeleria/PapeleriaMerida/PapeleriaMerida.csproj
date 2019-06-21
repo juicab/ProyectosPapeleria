@@ -133,6 +133,7 @@
     <Content Include="css\error.css" />
     <Content Include="css\css\mixins\_text-hide.css" />
     <Content Include="css\flaticon.css" />
+    <Content Include="css\flaticonCompu.css" />
     <Content Include="css\icomoon.css" />
     <Content Include="css\ionicons.min.css" />
     <Content Include="css\magnific-popup.css" />
@@ -140,6 +141,9 @@
     <Content Include="css\owl.carousel.min.css" />
     <Content Include="css\owl.theme.default.min.css" />
     <Content Include="css\style.css" />
+    <Content Include="font2\flaticon.css" />
+    <Content Include="font2\flaticon.html" />
+    <Content Include="font2\Flaticon.svg" />
     <Content Include="fonts\flaticon\backup.txt" />
     <Content Include="fonts\flaticon\font\flaticon.css" />
     <Content Include="fonts\flaticon\font\flaticon.html" />
@@ -388,16 +392,20 @@
     <Content Include="admin\sass\styles.scss" />
     <Content Include="admin\tables\data1.json" />
     <Content Include="admin\tables\data2.json" />
-    <Content Include="admin\docs\papeleria.pdf" />
-    <Content Include="admin\docs\sticker.pdf" />
     <Content Include="Content\sweetalert\sweet-alert.less" />
     <Content Include="Content\sweetalert\sweet-alert-combine.less" />
     <Content Include="Content\sweetalert\sweet-alert-animations.less" />
     <Content Include="Content\bootstrap\variables.less" />
     <Content Include="Content\bootstrap\mixins.less" />
-    <Content Include="admin\docs\BolsasAbril.pdf" />
-    <Content Include="admin\docs\NoovedadesAbril.pdf" />
-    <Content Include="admin\docs\PapelesAbril.pdf" />
+    <Content Include="font2\Flaticon.eot" />
+    <Content Include="font2\Flaticon.ttf" />
+    <Content Include="font2\Flaticon.woff" />
+    <Content Include="font2\Flaticon.woff2" />
+    <Content Include="font2\_flaticon.scss" />
+    <Content Include="admin\docs\BOLSAS06JUNIO.pdf" />
+    <Content Include="admin\docs\NOVEDADES23MAYO.pdf" />
+    <Content Include="admin\docs\PAPE5JUNIO.pdf" />
+    <Content Include="admin\docs\PAPELES06JUNIO.pdf" />
     <None Include="packages.config" />
     <Content Include="Views\Master\Publico.cshtml" />
     <Content Include="scss\.DS_Store" />
@@ -534,6 +542,9 @@
     <Content Include="Views\Papeleria\ListaCatalogos.cshtml" />
     <Content Include="Views\Sweet\Alert.cshtml" />
     <Content Include="Views\Papeleria\Reparacion.cshtml" />
+    <None Include="Properties\PublishProfiles\papemerida - FTP.pubxml" />
+    <None Include="Properties\PublishProfiles\papemerida - Web Deploy.pubxml" />
+    <Content Include="Views\Papeleria\Promociones.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
