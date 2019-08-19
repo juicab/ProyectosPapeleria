@@ -18,7 +18,7 @@ namespace PapelesdeRegalo.DAL
         String Servidor = "Data Source=198.71.227.2;Initial Catalog=papemerida;User ID=padmin;Password=Cs18191819;";
 
         public SqlConnection EstablecerConexion()
-        {
+        { 
             Con = new SqlConnection(Servidor);
 
             return Con;
